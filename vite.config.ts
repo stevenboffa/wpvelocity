@@ -8,6 +8,18 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Add middleware to handle client-side routing
+    middlewares: [
+      (req, res, next) => {
+        // Check if the request is for a file (has extension)
+        const hasFileExtension = /\.[^/]*$/.test(req.url || '');
+        if (!hasFileExtension) {
+          // Rewrite all URLs without file extensions to /index.html
+          req.url = '/index.html';
+        }
+        next();
+      },
+    ],
   },
   plugins: [
     react(),
