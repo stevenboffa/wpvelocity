@@ -31,8 +31,8 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Header />
       <HeroSection />
-      <ServicesSummary />
       <PainPoints />
+      <ServicesSummary />
       <PerformanceMetrics />
       <EnterpriseTechStack />
       <SimpleProcess />
