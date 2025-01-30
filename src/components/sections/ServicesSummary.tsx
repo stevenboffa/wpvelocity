@@ -3,7 +3,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
+export const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
   icon: any;
   title: string;
   price: string;
