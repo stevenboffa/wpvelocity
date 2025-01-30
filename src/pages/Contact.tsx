@@ -5,6 +5,7 @@ import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SectionHeader } from "@/components/ui/section-header";
 import {
   Form,
   FormControl,
@@ -88,10 +89,7 @@ const Contact = () => {
 
           <div className="container mx-auto px-6 relative">
             <div className="max-w-2xl mx-auto text-center animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient relative">
-                Get in Touch
-                <div className="absolute left-1/2 -translate-x-1/2 h-px w-40 bg-gradient-to-r from-transparent via-primary to-transparent bottom-0"></div>
-              </h1>
+              <SectionHeader>Get in Touch</SectionHeader>
               <p className="text-lg text-gray-300 leading-relaxed">
                 We typically respond within 24 hours. Your success is our priority.
               </p>
