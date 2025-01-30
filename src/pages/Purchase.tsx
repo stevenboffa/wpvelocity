@@ -1,42 +1,78 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { RocketIcon, ChartBar, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const PricingTier = ({
-  name,
-  price,
-  description,
-  features,
-}: {
-  name: string;
+const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
+  icon: any;
+  title: string;
   price: string;
-  description: string;
   features: string[];
+  ctaText: string;
+  ctaLink: string;
 }) => (
-  <div className="bg-card p-6 rounded-lg shadow-sm">
-    <h3 className="text-xl font-semibold mb-2">{name}</h3>
-    <div className="mb-4">
-      <span className="text-3xl font-bold">${price}</span>
-      <span className="text-muted-foreground">/month</span>
-    </div>
-    <p className="text-muted-foreground mb-6">{description}</p>
-    <ul className="space-y-3 mb-6">
+  <div className="p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300">
+    <Icon className="w-12 h-12 text-primary mb-6" />
+    <h3 className="text-2xl font-semibold mb-2 text-white">{title}</h3>
+    <div className="text-3xl font-bold text-primary mb-6">{price}</div>
+    <ul className="space-y-4 mb-8 text-gray-300">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center gap-2">
-          <Check className="text-primary h-5 w-5" />
-          <span className="text-sm">{feature}</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
+          {feature}
         </li>
       ))}
     </ul>
-    <Link to="/contact">
-      <Button className="w-full">Get Started</Button>
+    <Link to={ctaLink}>
+      <Button className="w-full" size="lg">{ctaText}</Button>
     </Link>
   </div>
 );
 
 const Purchase = () => {
+  const services = [
+    {
+      icon: RocketIcon,
+      title: "Velocity",
+      price: "$59/month",
+      features: [
+        "Premium WordPress hosting on WP Engine",
+        "1 hour monthly consulting",
+        "SEO & UX analysis with tools",
+        "Monthly insights report"
+      ],
+      ctaText: "Get Started",
+      ctaLink: "/contact"
+    },
+    {
+      icon: ChartBar,
+      title: "Velocity Pro",
+      price: "$249/month",
+      features: [
+        "Everything in Velocity package",
+        "5 hours monthly consulting",
+        "Monthly 30-min strategy call",
+        "Priority support"
+      ],
+      ctaText: "Get Started",
+      ctaLink: "/contact"
+    },
+    {
+      icon: Settings,
+      title: "Custom Services",
+      price: "Custom",
+      features: [
+        "Tailored WordPress solutions",
+        "Custom consulting hours",
+        "Dedicated support team",
+        "Bespoke development"
+      ],
+      ctaText: "Get a Quote",
+      ctaLink: "/contact"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -50,48 +86,10 @@ const Purchase = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <PricingTier
-              name="Starter"
-              price="99"
-              description="Perfect for small businesses getting started with WordPress"
-              features={[
-                "Premium WordPress Hosting",
-                "Daily Backups",
-                "SSL Certificate",
-                "CDN Integration",
-                "Basic SEO Audit",
-                "Monthly Performance Report"
-              ]}
-            />
-
-            <PricingTier
-              name="Professional"
-              price="199"
-              description="Ideal for growing businesses seeking optimization"
-              features={[
-                "Everything in Starter",
-                "Advanced SEO Consulting",
-                "Monthly UX Analysis",
-                "Conversion Rate Optimization",
-                "Priority Support",
-                "Quarterly Strategy Sessions"
-              ]}
-            />
-
-            <PricingTier
-              name="Enterprise"
-              price="399"
-              description="Comprehensive solution for serious online businesses"
-              features={[
-                "Everything in Professional",
-                "Custom Development Hours",
-                "Weekly Performance Reviews",
-                "Advanced Analytics Setup",
-                "Dedicated Support Manager",
-                "Custom Reporting Dashboard"
-              ]}
-            />
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
           </div>
 
           <div className="mt-16 text-center">

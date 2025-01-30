@@ -3,12 +3,78 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
+  icon: any;
+  title: string;
+  price: string;
+  features: string[];
+  ctaText: string;
+  ctaLink: string;
+}) => (
+  <div className="p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300">
+    <Icon className="w-12 h-12 text-primary mb-6" />
+    <h3 className="text-2xl font-semibold mb-2 text-white">{title}</h3>
+    <div className="text-3xl font-bold text-primary mb-6">{price}</div>
+    <ul className="space-y-4 mb-8 text-gray-300">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
+          {feature}
+        </li>
+      ))}
+    </ul>
+    <Link to={ctaLink}>
+      <Button className="w-full" size="lg">{ctaText}</Button>
+    </Link>
+  </div>
+);
+
 const ServicesSummary = () => {
+  const services = [
+    {
+      icon: RocketIcon,
+      title: "Velocity",
+      price: "$59/month",
+      features: [
+        "Premium WordPress hosting on WP Engine",
+        "1 hour monthly consulting",
+        "SEO & UX analysis with tools",
+        "Monthly insights report"
+      ],
+      ctaText: "Get a Quote",
+      ctaLink: "/contact"
+    },
+    {
+      icon: ChartBar,
+      title: "Velocity Pro",
+      price: "$249/month",
+      features: [
+        "Everything in Velocity package",
+        "5 hours monthly consulting",
+        "Monthly 30-min strategy call",
+        "Priority support"
+      ],
+      ctaText: "Get a Quote",
+      ctaLink: "/contact"
+    },
+    {
+      icon: Settings,
+      title: "Custom Services",
+      price: "Custom",
+      features: [
+        "Tailored WordPress solutions",
+        "Custom consulting hours",
+        "Dedicated support team",
+        "Bespoke development"
+      ],
+      ctaText: "Get a Quote",
+      ctaLink: "/contact"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="py-24 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
         <SectionHeader>Supercharge Your Online Presence</SectionHeader>
         <p className="text-gray-400 max-w-2xl mx-auto text-center mb-16">
           Expert WordPress hosting combined with personalized SEO, UX, and CRO consulting
@@ -17,81 +83,10 @@ const ServicesSummary = () => {
 
         {/* Main Services */}
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 mb-24">
-            {/* Velocity Package */}
-            <div className="p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300">
-              <RocketIcon className="w-12 h-12 text-primary mb-6" />
-              <h3 className="text-2xl font-semibold mb-2 text-white">Velocity</h3>
-              <div className="text-3xl font-bold text-primary mb-6">$59/month</div>
-              <ul className="space-y-4 mb-8 text-gray-300">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  Premium WordPress hosting on WP Engine
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  1 hour monthly consulting
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  SEO & UX analysis with tools
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  Monthly insights report
-                </li>
-              </ul>
-              <Link to="/purchase">
-                <Button className="w-full" size="lg">Get Started</Button>
-              </Link>
-            </div>
-
-            {/* Velocity Pro Package */}
-            <div className="p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-3 right-3 bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">
-                Most Popular
-              </div>
-              <ChartBar className="w-12 h-12 text-primary mb-6" />
-              <h3 className="text-2xl font-semibold mb-2 text-white">Velocity Pro</h3>
-              <div className="text-3xl font-bold text-primary mb-6">$249/month</div>
-              <ul className="space-y-4 mb-8 text-gray-300">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  Everything in Velocity package
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  5 hours monthly consulting
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  Monthly 30-min strategy call
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-                  Priority support
-                </li>
-              </ul>
-              <Link to="/purchase">
-                <Button className="w-full" size="lg">Get Started</Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Custom Services Section */}
-          <div className="max-w-3xl mx-auto text-center p-8 rounded-xl neo-blur">
-            <Settings className="w-12 h-12 text-primary mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 text-white">Custom SEO/UX/CRO Services</h3>
-            <p className="text-gray-300 mb-8">
-              Need a tailored solution? Let's create a custom package that fits your specific needs,
-              whether it's advanced SEO strategies, comprehensive UX improvements, or 
-              conversion rate optimization.
-            </p>
-            <Link to="/contact">
-              <Button variant="outline" size="lg" className="hover:bg-primary/10">
-                Get a Quote
-              </Button>
-            </Link>
+          <div className="grid md:grid-cols-3 gap-8 mb-24">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
           </div>
         </div>
       </section>
