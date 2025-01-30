@@ -62,8 +62,8 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow pb-24">
-        {/* Hero Section - Reduced padding from py-32 to py-20 */}
-        <section className="py-20 bg-black relative overflow-hidden">
+        {/* Hero Section - Added pt-24 for top padding */}
+        <section className="py-20 pt-24 bg-black relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
           
           {/* Animated Particles */}
@@ -89,7 +89,7 @@ const Contact = () => {
 
           <div className="container mx-auto px-6 relative">
             <div className="max-w-2xl mx-auto text-center animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-primary to-primary-light bg-clip-text text-transparent animate-background-shine bg-[length:200%_auto]">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
                 Get in Touch
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
