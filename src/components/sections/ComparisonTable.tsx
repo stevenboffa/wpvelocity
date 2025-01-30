@@ -1,3 +1,4 @@
+import React from 'react';
 import { Check, X } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
