@@ -26,6 +26,8 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
+
+      {/* Hero Section */}
       <section className="pt-48 pb-32 min-h-[70vh] flex items-center relative overflow-hidden">
         {/* Enhanced Animated Background with more particles */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-black to-black opacity-90" />
@@ -109,23 +111,22 @@ const Index = () => {
 
             {/* Enhanced Image Container with 5 animations */}
             <div className="relative group">
-              {/* Animation 1: Gradient glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-lg filter blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse" />
+              {/* Animation 1: Gradient glow effect - now more subtle */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent rounded-lg filter blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse opacity-60" />
               
               {/* Animation 2: Float animation */}
               <div className="animate-float relative">
                 {isLoading ? (
                   <div className="w-full max-w-lg mx-auto h-64 bg-gray-800 animate-pulse rounded-lg" />
                 ) : (
-                  /* Animation 3: Scale and rotate on hover */
-                  <div className="transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1">
+                  <div className="transition-all duration-500">
                     <img
                       src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e"
                       alt="Professional consultant"
                       className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
                     />
                     
-                    {/* Animation 4: Floating features with staggered delays */}
+                    {/* Animation 3: Floating features with staggered delays */}
                     <div className="absolute -right-4 top-4 glass-morphism p-4 rounded-lg animate-float" 
                          style={{ animationDelay: "1s", animationDuration: "4s" }}>
                       <div className="flex items-center space-x-2">
@@ -142,7 +143,32 @@ const Index = () => {
                       </div>
                     </div>
 
-                    {/* Animation 5: Shine effect overlay */}
+                    {/* New floating features */}
+                    <div className="absolute -right-4 bottom-1/2 glass-morphism p-4 rounded-lg animate-float"
+                         style={{ animationDelay: "1.5s", animationDuration: "4.5s" }}>
+                      <div className="flex items-center space-x-2">
+                        <ChartBar className="text-primary animate-pulse" size={20} />
+                        <span className="text-sm">Analytics</span>
+                      </div>
+                    </div>
+
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 glass-morphism p-4 rounded-lg animate-float"
+                         style={{ animationDelay: "2.5s", animationDuration: "5.5s" }}>
+                      <div className="flex items-center space-x-2">
+                        <Users className="text-primary animate-pulse" size={20} />
+                        <span className="text-sm">Team Support</span>
+                      </div>
+                    </div>
+
+                    <div className="absolute left-1/3 bottom-8 glass-morphism p-4 rounded-lg animate-float"
+                         style={{ animationDelay: "3s", animationDuration: "4.8s" }}>
+                      <div className="flex items-center space-x-2">
+                        <Sparkles className="text-primary animate-pulse" size={20} />
+                        <span className="text-sm">AI Powered</span>
+                      </div>
+                    </div>
+
+                    {/* Animation 4: Shine effect overlay */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-background-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 )}
