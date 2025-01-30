@@ -60,7 +60,7 @@ const Index = () => {
                   <div className="w-full max-w-lg mx-auto h-64 bg-gray-800 animate-pulse rounded-lg" />
                 ) : (
                   <img
-                    src="/photo-1581091226825-a6a2a5aee158"
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e"
                     alt="Professional consultant"
                     className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
                   />
