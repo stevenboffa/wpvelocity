@@ -32,10 +32,10 @@ const Index = () => {
       <Header />
       <HeroSection />
       <PainPoints />
-      <ServicesSummary />
       <PerformanceMetrics />
       <EnterpriseTechStack />
       <SimpleProcess />
+      <ServicesSummary />
       
       {/* Contact Form */}
       <section className="py-24 bg-gradient-to-t from-secondary to-black">
