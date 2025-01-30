@@ -15,10 +15,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <header className="fixed w-full bg-black/50 backdrop-blur-md z-50 border-b border-white/10">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold text-secondary">
+          <Link to="/" className="text-2xl font-bold text-gradient">
             Hosted by Steve
           </Link>
 
@@ -28,19 +28,19 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-secondary hover:text-primary transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 {item.name}
               </Link>
             ))}
             <Link to="/purchase">
-              <Button>Get Started</Button>
+              <Button className="bg-primary hover:bg-primary-dark text-black">Get Started</Button>
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -55,14 +55,14 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-secondary hover:text-primary transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
               <Link to="/purchase" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full">Get Started</Button>
+                <Button className="w-full bg-primary hover:bg-primary-dark text-black">Get Started</Button>
               </Link>
             </div>
           </div>
