@@ -3,7 +3,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 const PainPoints = () => {
   return (
-    <section className="py-24 bg-black/50 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-black/50 relative overflow-hidden">
       <SectionHeader>Common WordPress Hosting Challenges Solved</SectionHeader>
       <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (
@@ -63,8 +63,8 @@ const PainPoints = () => {
             ))}
           </div>
 
-          {/* Image Column */}
-          <div className="relative h-full flex items-center">
+          {/* Image Column - Hidden on mobile */}
+          <div className="relative h-full hidden md:flex items-center">
             <div className="rounded-2xl overflow-hidden glass-morphism p-4 w-full max-w-md mx-auto">
               <div className="relative">
                 <img 

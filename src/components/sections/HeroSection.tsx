@@ -4,7 +4,7 @@ import { CheckCircle, Star, ArrowRight, Server, ShieldCheck, RocketIcon, ChartBa
 
 const HeroSection = () => {
   return (
-    <section className="pt-48 pb-32 min-h-[70vh] flex items-center relative overflow-hidden">
+    <section className="pt-24 md:pt-48 pb-16 md:pb-32 min-h-[70vh] flex items-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary via-black to-black opacity-90" />
       
@@ -57,11 +57,11 @@ const HeroSection = () => {
             </p>
 
             {/* CTA Section */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <Link to="/purchase">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 w-full">
+              <Link to="/purchase" className="w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 py-6 bg-primary hover:bg-primary-dark relative overflow-hidden group transition-all duration-300 ease-out hover:scale-105"
+                  className="w-full sm:w-auto text-lg px-8 py-6 bg-primary hover:bg-primary-dark relative overflow-hidden group transition-all duration-300 ease-out hover:scale-105"
                 >
                   <span className="relative z-10 flex items-center">
                     Get Started
@@ -85,9 +85,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Image Container with floating features */}
-          <div className="relative group">
-            {/* Gradient glow effect */}
+          {/* Image Container with floating features - Hidden on mobile */}
+          <div className="relative group hidden md:block">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent rounded-lg filter blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse opacity-60" />
             
             {/* Float animation */}

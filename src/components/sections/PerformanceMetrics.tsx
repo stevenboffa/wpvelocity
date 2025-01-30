@@ -3,7 +3,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 const PerformanceMetrics = () => {
   return (
-    <section className="py-24 bg-black/50">
+    <section className="py-12 md:py-24 bg-black/50">
       <div className="container mx-auto px-6">
         <SectionHeader>Performance That Speaks for Itself</SectionHeader>
         <div className="grid md:grid-cols-4 gap-8">
