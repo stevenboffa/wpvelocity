@@ -26,6 +26,27 @@ const PainPoints = () => {
 
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-6 items-start">
+          {/* Image Column */}
+          <div className="relative h-full flex items-center">
+            <div className="rounded-2xl overflow-hidden glass-morphism p-4 w-full max-w-md mx-auto">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/9eea2a86-65ae-4f1b-976c-8f44dbbe2652.png"
+                  alt="Frustrated professional dealing with website issues"
+                  className="w-full rounded-xl object-cover"
+                  style={{ 
+                    height: '600px',
+                    objectPosition: 'center top',
+                    filter: 'brightness(0.85) contrast(1.1) saturate(0.9)'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent rounded-xl" />
+                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay rounded-xl" />
+              </div>
+            </div>
+          </div>
+
           {/* Pain Points Column */}
           <div className="space-y-6">
             {[
@@ -61,27 +82,6 @@ const PainPoints = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Image Column */}
-          <div className="relative h-full flex items-center">
-            <div className="rounded-2xl overflow-hidden glass-morphism p-4 w-full max-w-md mx-auto">
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/9eea2a86-65ae-4f1b-976c-8f44dbbe2652.png"
-                  alt="Frustrated professional dealing with website issues"
-                  className="w-full rounded-xl object-cover"
-                  style={{ 
-                    height: '600px',
-                    objectPosition: 'center top',
-                    filter: 'brightness(0.85) contrast(1.1) saturate(0.9)'
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-xl" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent rounded-xl" />
-                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay rounded-xl" />
-              </div>
-            </div>
           </div>
         </div>
       </div>
