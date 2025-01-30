@@ -25,7 +25,7 @@ const PainPoints = () => {
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Pain Points Column */}
           <div className="space-y-6">
             {[
@@ -64,15 +64,21 @@ const PainPoints = () => {
           </div>
 
           {/* Image Column */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden glass-morphism p-4">
-              <img 
-                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80" 
-                alt="Frustrated professional dealing with website issues"
-                className="w-full h-full rounded-xl object-cover"
-                style={{ aspectRatio: "3/4" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl" />
+          <div className="relative h-full flex items-center">
+            <div className="rounded-2xl overflow-hidden glass-morphism p-4 w-full max-w-md mx-auto">
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80" 
+                  alt="Frustrated professional dealing with website issues"
+                  className="w-full rounded-xl object-cover"
+                  style={{ 
+                    height: '600px',
+                    objectPosition: 'center 20%',
+                    filter: 'brightness(0.9) contrast(1.1)'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent rounded-xl" />
+              </div>
             </div>
           </div>
         </div>
