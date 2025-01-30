@@ -3,10 +3,22 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CheckCircle, Star, ArrowRight, Database, Server, ShieldCheck, RocketIcon, ChartBar, Users } from "lucide-react";
+import { usePixabayImages } from "@/hooks/use-pixabay-images";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
-  return (
+  const { data: images, isLoading, error } = usePixabayImages();
+  const { toast } = useToast();
 
+  if (error) {
+    toast({
+      title: "Error loading images",
+      description: "Please try again later",
+      variant: "destructive",
+    });
+  }
+
+  return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Header />
       
@@ -40,11 +52,21 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="animate-float">
-                <img
-                  src="/placeholder.svg"
-                  alt="WordPress Hosting"
-                  className="w-full max-w-lg mx-auto"
-                />
+                {isLoading ? (
+                  <div className="w-full max-w-lg mx-auto h-64 bg-gray-800 animate-pulse rounded-lg" />
+                ) : images && images[0] ? (
+                  <img
+                    src={images[0].webformatURL}
+                    alt="WordPress Hosting"
+                    className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
+                  />
+                ) : (
+                  <img
+                    src="/placeholder.svg"
+                    alt="WordPress Hosting"
+                    className="w-full max-w-lg mx-auto"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -87,7 +109,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Pain Points Section */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
@@ -128,7 +149,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Performance Metrics Section */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
@@ -151,7 +171,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Technology Stack Section */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
@@ -234,7 +253,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Process Section */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
@@ -270,7 +288,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Social Proof */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
@@ -316,7 +333,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Contact Form */}
       <section className="py-24 bg-gradient-to-t from-secondary to-black">
         <div className="container mx-auto px-6">
