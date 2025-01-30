@@ -6,6 +6,7 @@ import { CheckCircle, Star, ArrowRight, Database, Server, ShieldCheck, RocketIco
 
 const Index = () => {
   return (
+
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Header />
       
@@ -122,6 +123,148 @@ const Index = () => {
                   <h3 className="text-xl font-semibold mb-3 text-white">{item.pain}</h3>
                   <p className="text-gray-300 leading-relaxed">{item.solution}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Metrics Section */}
+      <section className="py-24 bg-black/50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
+            Performance That Speaks for Itself
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { metric: "99.9%", label: "Uptime Guarantee", icon: Server },
+              { metric: "<2s", label: "Load Time", icon: RocketIcon },
+              { metric: "24/7", label: "Expert Support", icon: Users },
+              { metric: "100%", label: "Client Satisfaction", icon: CheckCircle },
+            ].map((item, index) => (
+              <div key={index} className="text-center p-8 glass-morphism rounded-xl">
+                <item.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <h3 className="text-3xl font-bold mb-2 text-gradient">{item.metric}</h3>
+                <p className="text-gray-300">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack Section */}
+      <section className="py-24 bg-black">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
+            Enterprise-Grade Technology Stack
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="p-6 neo-blur rounded-xl">
+                <h3 className="text-2xl font-semibold mb-4 text-white">Infrastructure</h3>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    WP Engine Premium Infrastructure
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Global CDN Network
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Advanced Caching Systems
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 neo-blur rounded-xl">
+                <h3 className="text-2xl font-semibold mb-4 text-white">Security</h3>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Daily Malware Scanning
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    DDoS Protection
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    SSL Certificates Included
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="space-y-8">
+              <div className="p-6 neo-blur rounded-xl">
+                <h3 className="text-2xl font-semibold mb-4 text-white">Development</h3>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Staging Environments
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Git Integration
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Custom Development Support
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 neo-blur rounded-xl">
+                <h3 className="text-2xl font-semibold mb-4 text-white">Analytics</h3>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Performance Monitoring
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    User Behavior Tracking
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="text-primary" size={20} />
+                    Conversion Analytics
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-24 bg-black/50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
+            Our Simple Process
+          </h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                step: "1",
+                title: "Initial Consultation",
+                description: "We start with a thorough discussion of your business goals, current challenges, and technical requirements to create a tailored hosting solution.",
+              },
+              {
+                step: "2",
+                title: "Site Analysis & Planning",
+                description: "Our team conducts a comprehensive analysis of your WordPress site, identifying optimization opportunities and creating an action plan.",
+              },
+              {
+                step: "3",
+                title: "Implementation & Support",
+                description: "We handle the entire migration process, implement optimizations, and provide ongoing support to ensure your site performs at its best.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative p-8 glass-morphism rounded-xl">
+                <div className="absolute -top-6 left-8 w-12 h-12 flex items-center justify-center bg-primary rounded-full">
+                  <span className="text-xl font-bold text-black">{item.step}</span>
+                </div>
+                <h3 className="text-2xl font-semibold mt-4 mb-4 text-white">{item.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
