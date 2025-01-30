@@ -91,6 +91,32 @@ export default {
             "background-size": "200% 200%",
             "background-position": "right center"
           }
+        },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        pulse: {
+          "0%, 100%": {
+            opacity: "1"
+          },
+          "50%": {
+            opacity: "0.5"
+          }
+        },
+        "background-shine": {
+          "0%": {
+            backgroundPosition: "200% 0"
+          },
+          "100%": {
+            backgroundPosition: "-200% 0"
+          }
         }
       },
       animation: {
@@ -99,6 +125,9 @@ export default {
         float: "float 6s ease-in-out infinite",
         "gradient-x": "gradient-x 15s ease infinite",
         "gradient-y": "gradient-y 15s ease infinite",
+        "fade-in-up": "fade-in-up 0.5s ease-out",
+        pulse: "pulse 2s ease-in-out infinite",
+        "background-shine": "background-shine 8s linear infinite"
       },
     },
   },
