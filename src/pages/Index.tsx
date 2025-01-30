@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { CheckCircle, Star, ArrowRight, Database, Server, ShieldCheck, RocketIcon, ChartBar, Users, Sparkles } from "lucide-react";
+import { CheckCircle, Star, ArrowRight, Server, ShieldCheck, RocketIcon, ChartBar, Database, Users } from "lucide-react";
 import { usePixabayImages } from "@/hooks/use-pixabay-images";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect } from "react";
@@ -21,13 +21,20 @@ const Index = () => {
     }
   }, [error, toast]);
 
-  const SectionHeader = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <h2 className={`text-4xl font-bold text-center mb-16 text-white relative group ${className}`}>
-      {children}
-      <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-1/3 transition-all duration-300 ease-in-out" />
-      <span className="absolute -bottom-4 right-1/2 transform translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-1/3 transition-all duration-300 ease-in-out" />
-    </h2>
-  );
+  const SectionHeader = ({ children, variant = "default", className }: { children: React.ReactNode; variant?: "default" | "gradient" | "dashed" | "thick"; className?: string }) => {
+    const underlineStyles = {
+      default: "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/4 after:h-0.5 after:bg-primary",
+      gradient: "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/3 after:h-1 after:bg-gradient-to-r after:from-primary/30 after:via-primary after:to-primary/30",
+      dashed: "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/3 after:h-0.5 after:bg-primary after:border-dashed after:[background-size:8px_2px] after:[background-image:linear-gradient(to_right,#9b87f5_50%,transparent_50%)]",
+      thick: "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/4 after:h-1.5 after:bg-primary after:rounded-full",
+    };
+
+    return (
+      <h2 className={`text-4xl font-bold text-center mb-16 text-white relative pb-6 ${underlineStyles[variant]} ${className}`}>
+        {children}
+      </h2>
+    );
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
@@ -132,44 +139,39 @@ const Index = () => {
                       className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
                     />
                     
-                    {/* Enhanced Floating Feature Cards with increased size */}
-                    <div className="absolute top-1/4 -translate-y-1/2 left-1/2 -translate-x-1/2 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
+                    {/* Top Left Feature Card */}
+                    <div className="absolute -top-8 -left-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[200px]"
                          style={{ animationDelay: "0s", animationDuration: "4s" }}>
-                      <div className="flex items-center space-x-3">
-                        <RocketIcon className="text-primary animate-pulse w-6 h-6" />
-                        <span className="text-base font-medium">Instant Deploy</span>
+                      <div className="flex items-center space-x-4">
+                        <RocketIcon className="text-primary animate-pulse w-8 h-8" />
+                        <span className="text-lg font-medium">Instant Deploy</span>
                       </div>
                     </div>
                     
-                    <div className="absolute top-1/2 -right-12 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
+                    {/* Top Right Feature Card */}
+                    <div className="absolute -top-8 -right-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[200px]"
                          style={{ animationDelay: "1s", animationDuration: "4.5s" }}>
-                      <div className="flex items-center space-x-3">
-                        <ShieldCheck className="text-primary animate-pulse w-6 h-6" />
-                        <span className="text-base font-medium">Secure</span>
+                      <div className="flex items-center space-x-4">
+                        <ShieldCheck className="text-primary animate-pulse w-8 h-8" />
+                        <span className="text-lg font-medium">Secure</span>
                       </div>
                     </div>
                     
-                    <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
-                         style={{ animationDelay: "2s", animationDuration: "5s" }}>
-                      <div className="flex items-center space-x-3">
-                        <ChartBar className="text-primary animate-pulse w-6 h-6" />
-                        <span className="text-base font-medium">Analytics</span>
-                      </div>
-                    </div>
-
-                    <div className="absolute top-1/2 -left-12 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
+                    {/* Bottom Left Feature Card */}
+                    <div className="absolute -bottom-8 -left-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[200px]"
                          style={{ animationDelay: "1.5s", animationDuration: "4.2s" }}>
-                      <div className="flex items-center space-x-3">
-                        <Users className="text-primary animate-pulse w-6 h-6" />
-                        <span className="text-base font-medium">Team</span>
+                      <div className="flex items-center space-x-4">
+                        <Server className="text-primary animate-pulse w-8 h-8" />
+                        <span className="text-lg font-medium">Optimized</span>
                       </div>
                     </div>
 
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
-                         style={{ animationDelay: "2.5s", animationDuration: "4.8s" }}>
-                      <div className="flex items-center space-x-3">
-                        <Sparkles className="text-primary animate-pulse w-6 h-6" />
-                        <span className="text-base font-medium">AI Ready</span>
+                    {/* Bottom Right Feature Card */}
+                    <div className="absolute -bottom-8 -right-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[200px]"
+                         style={{ animationDelay: "2s", animationDuration: "4.8s" }}>
+                      <div className="flex items-center space-x-4">
+                        <ChartBar className="text-primary animate-pulse w-8 h-8" />
+                        <span className="text-lg font-medium">Analytics</span>
                       </div>
                     </div>
 
@@ -188,7 +190,7 @@ const Index = () => {
 
       {/* Enhanced Services Summary with particles */}
       <section className="py-24 bg-black relative overflow-hidden">
-        <SectionHeader>Everything You Need to Succeed Online</SectionHeader>
+        <SectionHeader variant="gradient">Everything You Need to Succeed Online</SectionHeader>
         <div className="absolute inset-0">
           {[...Array(30)].map((_, i) => (
             <div
@@ -242,7 +244,7 @@ const Index = () => {
 
       {/* Enhanced Pain Points Section with particles */}
       <section className="py-24 bg-black/50 relative overflow-hidden">
-        <SectionHeader>Common WordPress Hosting Challenges Solved</SectionHeader>
+        <SectionHeader variant="thick">Common WordPress Hosting Challenges Solved</SectionHeader>
         <div className="absolute inset-0">
           {[...Array(30)].map((_, i) => (
             <div
