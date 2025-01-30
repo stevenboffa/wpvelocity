@@ -61,20 +61,49 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow pt-32 pb-16">
-        {/* Hero Section */}
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-dark/20 animate-gradient-x" />
-          <div className="container mx-auto px-6 py-16 relative">
+      <main className="flex-grow">
+        {/* Hero Section - Styled like Services page */}
+        <section className="py-24 bg-black relative overflow-hidden">
+          {/* Background gradient similar to Services page */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+          
+          {/* Animated Particles */}
+          <div className="absolute inset-0">
+            {[...Array(50)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute animate-pulse"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  width: `${Math.random() * 4 + 2}px`,
+                  height: `${Math.random() * 4 + 2}px`,
+                  backgroundColor: i % 2 === 0 ? 'rgba(155, 135, 245, 0.3)' : 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '50%',
+                  animationDelay: `${Math.random() * 4}s`,
+                  animationDuration: `${Math.random() * 6 + 2}s`,
+                  filter: `blur(${Math.random() * 2}px)`,
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="container mx-auto px-6 relative">
             <div className="max-w-2xl mx-auto text-center animate-fade-in-up">
-              <h1 className="text-4xl font-bold mb-4 text-gradient">Get in Touch</h1>
-              <p className="text-lg text-muted-foreground">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-primary to-primary-light bg-clip-text text-transparent animate-background-shine bg-[length:200%_auto]">
+                Get in Touch
+              </h1>
+              <p className="text-lg text-gray-300 leading-relaxed">
                 We typically respond within 24 hours. Your success is our priority.
               </p>
             </div>
           </div>
-        </div>
 
+          {/* Decorative bottom gradient */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent" />
+        </section>
+
+        {/* Rest of the contact page content */}
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             {/* Two Column Layout */}
