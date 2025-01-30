@@ -68,16 +68,18 @@ const PainPoints = () => {
             <div className="rounded-2xl overflow-hidden glass-morphism p-4 w-full max-w-md mx-auto">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80" 
+                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80" 
                   alt="Frustrated professional dealing with website issues"
                   className="w-full rounded-xl object-cover"
                   style={{ 
-                    height: '600px',
-                    objectPosition: 'center 20%',
-                    filter: 'brightness(0.9) contrast(1.1)'
+                    height: '480px',
+                    objectPosition: 'center top',
+                    filter: 'brightness(0.85) contrast(1.1) saturate(0.9)'
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent rounded-xl" />
+                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay rounded-xl" />
               </div>
             </div>
           </div>
