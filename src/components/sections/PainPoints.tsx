@@ -72,9 +72,9 @@ const PainPoints = () => {
                   alt="Frustrated professional dealing with website issues"
                   className="w-full rounded-xl object-cover"
                   style={{ 
-                    height: '480px',
+                    height: '600px',
                     objectPosition: 'center top',
-                    filter: 'brightness(0.7) contrast(1.1) saturate(0.9)'
+                    filter: 'brightness(0.85) contrast(1.1) saturate(0.9)'
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-xl" />
