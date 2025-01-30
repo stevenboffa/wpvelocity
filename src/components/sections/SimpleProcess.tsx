@@ -1,25 +1,20 @@
-import { ClipboardList, MessageSquare, Rocket, Check } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
 
 const SimpleProcess = () => {
   const steps = [
     {
-      icon: ClipboardList,
       title: "1. Requirements",
       description: "Share your hosting needs and requirements"
     },
     {
-      icon: MessageSquare,
       title: "2. Consultation",
       description: "Get expert advice on the best solution"
     },
     {
-      icon: Rocket,
       title: "3. Setup",
       description: "Quick and seamless deployment"
     },
     {
-      icon: Check,
       title: "4. Go Live",
       description: "Your optimized WordPress site goes live"
     }
@@ -42,9 +37,6 @@ const SimpleProcess = () => {
               </div>
               
               <div className="mt-4">
-                <div className="mb-6 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <step.icon className="w-8 h-8 text-primary" />
-                </div>
                 <h3 className="text-xl font-semibold mb-4 text-white">{step.title}</h3>
                 <p className="text-gray-400">{step.description}</p>
               </div>

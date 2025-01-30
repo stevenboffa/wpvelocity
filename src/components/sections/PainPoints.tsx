@@ -25,37 +25,55 @@ const PainPoints = () => {
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12">
-          {[
-            {
-              icon: Database,
-              pain: "Slow Loading Times",
-              solution: "Our optimized server infrastructure ensures your site loads in under 2 seconds.",
-            },
-            {
-              icon: ShieldCheck,
-              pain: "Security Concerns",
-              solution: "We implement daily malware scans and real-time threat detection.",
-            },
-            {
-              icon: ChartBar,
-              pain: "Poor SEO Performance",
-              solution: "Our expert SEO consulting helps identify and fix technical issues.",
-            },
-            {
-              icon: Users,
-              pain: "Low Conversion Rates",
-              solution: "We help identify user experience bottlenecks to increase conversions.",
-            },
-          ].map((item, index) => (
-            <div key={index} className="flex items-start space-x-6 p-8 rounded-xl bg-secondary/10 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300">
-              <item.icon className="text-primary flex-shrink-0 w-8 h-8" />
-              <div>
-                <h3 className="text-xl font-semibold mb-3 text-white">{item.pain}</h3>
-                <p className="text-gray-300 leading-relaxed">{item.solution}</p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Pain Points Column */}
+          <div className="space-y-6">
+            {[
+              {
+                icon: Database,
+                pain: "Slow Loading Times",
+                solution: "Our optimized server infrastructure ensures your site loads in under 2 seconds.",
+              },
+              {
+                icon: ShieldCheck,
+                pain: "Security Concerns",
+                solution: "We implement daily malware scans and real-time threat detection.",
+              },
+              {
+                icon: ChartBar,
+                pain: "Poor SEO Performance",
+                solution: "Our expert SEO consulting helps identify and fix technical issues.",
+              },
+              {
+                icon: Users,
+                pain: "Low Conversion Rates",
+                solution: "We help identify user experience bottlenecks to increase conversions.",
+              },
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="flex items-start space-x-6 p-8 rounded-xl bg-secondary/10 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300"
+              >
+                <item.icon className="text-primary flex-shrink-0 w-8 h-8" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{item.pain}</h3>
+                  <p className="text-gray-300 leading-relaxed">{item.solution}</p>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* Image Column */}
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden glass-morphism p-4">
+              <img 
+                src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80" 
+                alt="Frustrated professional dealing with website issues"
+                className="w-full h-auto rounded-xl object-cover aspect-[4/3]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl" />
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
