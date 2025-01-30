@@ -16,11 +16,23 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
+  subject: z.string().min(1, "Please select a subject"),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  contactPreference: z.enum(["email", "phone"], {
+    required_error: "Please select a contact preference",
+  }),
+  phone: z.string().optional(),
 });
 
 const Contact = () => {
@@ -30,14 +42,17 @@ const Contact = () => {
     defaultValues: {
       name: "",
       email: "",
+      subject: "",
       message: "",
+      contactPreference: "email",
+      phone: "",
     },
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
     toast({
-      title: "Message sent!",
+      title: "Message received!",
       description: "We'll get back to you as soon as possible.",
     });
     form.reset();
@@ -47,45 +62,79 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow pt-32 pb-16">
+        {/* Hero Section */}
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-dark/20 animate-gradient-x" />
+          <div className="container mx-auto px-6 py-16 relative">
+            <div className="max-w-2xl mx-auto text-center animate-fade-in-up">
+              <h1 className="text-4xl font-bold mb-4 text-gradient">Get in Touch</h1>
+              <p className="text-lg text-muted-foreground">
+                We typically respond within 24 hours. Your success is our priority.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8">Get in Touch</h1>
-            
-            <div className="grid md:grid-cols-2 gap-12 mb-12">
+          <div className="max-w-6xl mx-auto">
+            {/* Two Column Layout */}
+            <div className="grid lg:grid-cols-2 gap-12 mt-12">
+              {/* Contact Information */}
               <div className="space-y-8">
-                <p className="text-lg text-muted-foreground mb-8">
-                  Have questions about our WordPress hosting or consulting services? 
-                  We're here to help you optimize your website's performance.
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <Mail className="text-primary" />
+                <div className="glass-morphism p-8 rounded-lg space-y-8 animate-fade-in-up">
+                  <div className="flex items-center gap-4 group hover:translate-x-2 transition-transform">
+                    <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <Mail className="text-primary h-6 w-6" />
+                    </div>
                     <div>
                       <h3 className="font-semibold">Email</h3>
                       <p className="text-muted-foreground">steve@hostedby.steve</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <Phone className="text-primary" />
+                  <div className="flex items-center gap-4 group hover:translate-x-2 transition-transform">
+                    <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <Phone className="text-primary h-6 w-6" />
+                    </div>
                     <div>
                       <h3 className="font-semibold">Phone</h3>
                       <p className="text-muted-foreground">(555) 123-4567</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <MapPin className="text-primary" />
+                  <div className="flex items-center gap-4 group hover:translate-x-2 transition-transform">
+                    <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <MapPin className="text-primary h-6 w-6" />
+                    </div>
                     <div>
                       <h3 className="font-semibold">Location</h3>
                       <p className="text-muted-foreground">San Francisco, CA</p>
                     </div>
                   </div>
                 </div>
+
+                {/* Business Hours */}
+                <div className="glass-morphism p-8 rounded-lg animate-fade-in-up">
+                  <h3 className="font-semibold mb-4">Business Hours</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span>Monday - Friday</span>
+                      <span className="text-muted-foreground">9:00 AM - 6:00 PM PST</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Saturday</span>
+                      <span className="text-muted-foreground">10:00 AM - 4:00 PM PST</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Sunday</span>
+                      <span className="text-muted-foreground">Closed</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="bg-card p-6 rounded-lg shadow-sm">
+              {/* Contact Form */}
+              <div className="neo-blur p-8 rounded-lg animate-fade-in-up">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <FormField
@@ -115,6 +164,68 @@ const Contact = () => {
                         </FormItem>
                       )}
                     />
+
+                    <FormField
+                      control={form.control}
+                      name="subject"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Subject</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select a subject" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="general">General Inquiry</SelectItem>
+                              <SelectItem value="support">Technical Support</SelectItem>
+                              <SelectItem value="billing">Billing Question</SelectItem>
+                              <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="contactPreference"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Preferred Contact Method</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select contact preference" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="email">Email</SelectItem>
+                              <SelectItem value="phone">Phone</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {form.watch("contactPreference") === "phone" && (
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Phone Number</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Your phone number" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    )}
                     
                     <FormField
                       control={form.control}
@@ -124,11 +235,17 @@ const Contact = () => {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Tell us about your website needs..."
-                              className="min-h-[120px]"
+                              placeholder="Tell us about your needs..."
+                              className="min-h-[120px] resize-none"
+                              maxLength={500}
                               {...field}
                             />
                           </FormControl>
+                          <div className="flex justify-end">
+                            <span className="text-sm text-muted-foreground">
+                              {field.value.length}/500 characters
+                            </span>
+                          </div>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -139,6 +256,33 @@ const Contact = () => {
                     </Button>
                   </form>
                 </Form>
+              </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="mt-24 glass-morphism p-8 rounded-lg animate-fade-in-up">
+              <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-semibold mb-2">What are your typical response times?</h3>
+                    <p className="text-muted-foreground">We aim to respond to all inquiries within 24 hours during business days.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Do you offer emergency support?</h3>
+                    <p className="text-muted-foreground">Yes, premium support plans include 24/7 emergency assistance.</p>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-semibold mb-2">What payment methods do you accept?</h3>
+                    <p className="text-muted-foreground">We accept all major credit cards, PayPal, and bank transfers.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Can I schedule a consultation?</h3>
+                    <p className="text-muted-foreground">Yes, you can schedule a free 30-minute consultation through our calendar system.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
