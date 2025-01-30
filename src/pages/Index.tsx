@@ -4,19 +4,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CheckCircle, Star, ArrowRight, Database, Server, ShieldCheck, RocketIcon, ChartBar, Users } from "lucide-react";
 import { usePixabayImages } from "@/hooks/use-pixabay-images";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
+import { useEffect } from "react";
 
 const Index = () => {
   const { data: images, isLoading, error } = usePixabayImages();
   const { toast } = useToast();
 
-  if (error) {
-    toast({
-      title: "Error loading images",
-      description: "Please try again later",
-      variant: "destructive",
-    });
-  }
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: "Error loading images",
+        description: "Please try again later",
+        variant: "destructive",
+      });
+    }
+  }, [error, toast]);
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
@@ -350,7 +353,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+      
       <Footer />
     </div>
   );

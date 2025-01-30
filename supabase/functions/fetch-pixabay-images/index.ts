@@ -19,6 +19,8 @@ serve(async (req) => {
       throw new Error('Pixabay API key not found')
     }
 
+    console.log('Fetching images from Pixabay for query:', query)
+    
     const response = await fetch(
       `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${encodeURIComponent(query)}&per_page=${per_page}&image_type=photo&orientation=horizontal`,
       {
@@ -29,7 +31,12 @@ serve(async (req) => {
       }
     )
 
+    if (!response.ok) {
+      throw new Error(`Pixabay API error: ${response.statusText}`)
+    }
+
     const data = await response.json()
+    console.log('Successfully fetched images')
     
     return new Response(
       JSON.stringify(data),
