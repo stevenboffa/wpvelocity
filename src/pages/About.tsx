@@ -6,10 +6,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BadgeCheck, Rocket, Shield, Zap, BarChart, Users } from "lucide-react";
 import ParticleBackground from "@/components/ui/particle-background";
 import CTASection from "@/components/sections/CTASection";
+import SEO from "@/components/SEO";
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="About Us | WPVelocity.pro"
+        description="Meet the team behind WPVelocity. Learn about our mission to deliver exceptional WordPress hosting combined with expert SEO and UX consulting services."
+        path="/about"
+      />
       <Header />
       <main className="flex-grow pt-32 pb-16 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
