@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
-import MobileNavigation from "./components/MobileNavigation";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -22,7 +21,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="min-h-screen flex flex-col pb-16 md:pb-0">
+          <div className="min-h-screen flex flex-col">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
@@ -32,7 +31,6 @@ const App = () => (
               <Route path="/purchase" element={<Purchase />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-            <MobileNavigation />
           </div>
         </BrowserRouter>
       </TooltipProvider>
