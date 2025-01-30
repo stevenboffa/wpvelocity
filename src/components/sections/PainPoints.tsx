@@ -68,8 +68,8 @@ const PainPoints = () => {
             <div className="rounded-2xl overflow-hidden glass-morphism p-4 w-full max-w-md mx-auto">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/9eea2a86-65ae-4f1b-976c-8f44dbbe2652.png"
-                  alt="Frustrated professional dealing with website issues"
+                  src="/lovable-uploads/8ea7345d-cbf2-420f-9f87-da466c736f39.png"
+                  alt="A professional experiencing website management challenges"
                   className="w-full rounded-xl object-cover"
                   style={{ 
                     height: '600px',
