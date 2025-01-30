@@ -62,7 +62,6 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow pb-24">
-        {/* Hero Section - Added pt-24 for top padding */}
         <section className="py-20 pt-24 bg-black relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
           
@@ -89,8 +88,9 @@ const Contact = () => {
 
           <div className="container mx-auto px-6 relative">
             <div className="max-w-2xl mx-auto text-center animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient relative">
                 Get in Touch
+                <div className="absolute left-1/2 -translate-x-1/2 h-px w-40 bg-gradient-to-r from-transparent via-primary to-transparent bottom-0"></div>
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
                 We typically respond within 24 hours. Your success is our priority.
@@ -98,14 +98,11 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Decorative bottom gradient */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent" />
         </section>
 
-        {/* Rest of the contact page content */}
         <div className="container mx-auto px-6 -mt-8">
           <div className="max-w-6xl mx-auto">
-            {/* Two Column Layout */}
             <div className="grid lg:grid-cols-2 gap-12 mt-12">
               {/* Contact Information */}
               <div className="space-y-8">
@@ -141,21 +138,25 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Business Hours */}
+                {/* Response Time Expectations */}
                 <div className="glass-morphism p-8 rounded-lg animate-fade-in-up">
-                  <h3 className="font-semibold mb-4">Business Hours</h3>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Monday - Friday</span>
-                      <span className="text-muted-foreground">9:00 AM - 6:00 PM PST</span>
+                  <h3 className="font-semibold mb-4">Our Commitment to You</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                      <p className="text-muted-foreground">Initial response within 24 hours</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Saturday</span>
-                      <span className="text-muted-foreground">10:00 AM - 4:00 PM PST</span>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                      <p className="text-muted-foreground">Dedicated support team for your inquiries</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span className="text-muted-foreground">Closed</span>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                      <p className="text-muted-foreground">Priority handling for urgent matters</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                      <p className="text-muted-foreground">Follow-up communications to ensure satisfaction</p>
                     </div>
                   </div>
                 </div>
