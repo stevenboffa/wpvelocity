@@ -3,8 +3,52 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { ServiceCard } from "@/components/sections/ServicesSummary";
 import { RocketIcon, ChartBar, Settings } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Purchase = () => {
+  const [searchParams] = useSearchParams();
+  const success = searchParams.get('success');
+  const canceled = searchParams.get('canceled');
+
+  useEffect(() => {
+    if (success) {
+      toast({
+        title: "Success!",
+        description: "Your subscription has been processed successfully.",
+        variant: "default",
+      });
+    } else if (canceled) {
+      toast({
+        title: "Canceled",
+        description: "The payment was canceled. Please try again if you wish to subscribe.",
+        variant: "destructive",
+      });
+    }
+  }, [success, canceled]);
+
+  const handleSubscribe = async (priceId: string) => {
+    try {
+      const { data, error } = await supabase.functions.invoke('create-checkout-session', {
+        body: { priceId }
+      });
+
+      if (error) throw error;
+      if (data?.url) {
+        window.location.href = data.url;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem initiating the checkout process. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
   const services = [
     {
       icon: RocketIcon,
@@ -16,8 +60,9 @@ const Purchase = () => {
         "SEO & UX analysis with tools",
         "Monthly insights report"
       ],
-      ctaText: "Get Started",
-      ctaLink: "/contact"
+      ctaText: "Subscribe Now",
+      ctaLink: "#",
+      priceId: "price_1Qn4LSF36j5KRkTBVqyyietu"
     },
     {
       icon: ChartBar,
@@ -29,8 +74,9 @@ const Purchase = () => {
         "Monthly 30-min strategy call",
         "Priority support"
       ],
-      ctaText: "Get Started",
-      ctaLink: "/contact"
+      ctaText: "Subscribe Now",
+      ctaLink: "#",
+      priceId: "price_1Qn4MQF36j5KRkTB86YH2MqN"
     },
     {
       icon: Settings,
@@ -65,7 +111,11 @@ const Purchase = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <ServiceCard 
+                key={index} 
+                {...service} 
+                onSubscribe={service.priceId ? () => handleSubscribe(service.priceId!) : undefined}
+              />
             ))}
           </div>
         </div>

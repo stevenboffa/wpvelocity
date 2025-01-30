@@ -3,13 +3,22 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-export const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
+export const ServiceCard = ({ 
+  icon: Icon, 
+  title, 
+  price, 
+  features, 
+  ctaText, 
+  ctaLink,
+  onSubscribe 
+}: {
   icon: any;
   title: string;
   price: string;
   features: string[];
   ctaText: string;
   ctaLink: string;
+  onSubscribe?: () => void;
 }) => (
   <div className="p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300">
     <Icon className="w-12 h-12 text-primary mb-6" />
@@ -23,9 +32,15 @@ export const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLi
         </li>
       ))}
     </ul>
-    <Link to={ctaLink}>
-      <Button className="w-full" size="lg">{ctaText}</Button>
-    </Link>
+    {onSubscribe ? (
+      <Button className="w-full" size="lg" onClick={onSubscribe}>
+        {ctaText}
+      </Button>
+    ) : (
+      <Link to={ctaLink}>
+        <Button className="w-full" size="lg">{ctaText}</Button>
+      </Link>
+    )}
   </div>
 );
 
