@@ -1,97 +1,59 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { RocketIcon, ChartBar, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
-  icon: any;
-  title: string;
-  price: string;
-  features: string[];
-  ctaText: string;
-  ctaLink: string;
-}) => (
-  <div className="flex flex-col h-full p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300">
-    <div className="flex-grow">
-      <Icon className="w-12 h-12 text-primary mb-6" />
-      <h3 className="text-2xl font-semibold mb-2 text-white">{title}</h3>
-      <div className="text-3xl font-bold text-primary mb-6">{price}</div>
-      <ul className="space-y-4 mb-8 text-gray-300">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-            {feature}
-          </li>
-        ))}
-      </ul>
-    </div>
-    <Link to={ctaLink} className="mt-auto">
-      <Button className="w-full" size="lg">{ctaText}</Button>
-    </Link>
-  </div>
-);
+import SEO from "@/components/SEO";
 
 const Purchase = () => {
-  const services = [
-    {
-      icon: RocketIcon,
-      title: "Velocity",
-      price: "$59/month",
-      features: [
-        "Premium WordPress hosting on WP Engine",
-        "1 hour monthly consulting",
-        "SEO & UX analysis with tools",
-        "Monthly insights report"
-      ],
-      ctaText: "Get Started",
-      ctaLink: "/contact"
-    },
-    {
-      icon: ChartBar,
-      title: "Velocity Pro",
-      price: "$249/month",
-      features: [
-        "Everything in Velocity package",
-        "5 hours monthly consulting",
-        "Monthly 30-min strategy call",
-        "Priority support"
-      ],
-      ctaText: "Get Started",
-      ctaLink: "/contact"
-    },
-    {
-      icon: Settings,
-      title: "Custom Services",
-      price: "Custom",
-      features: [
-        "Tailored WordPress solutions",
-        "Consulting hours",
-        "Dedicated support team",
-        "Bespoke development"
-      ],
-      ctaText: "Get Started",
-      ctaLink: "/contact"
-    }
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Buy WPVelocity Now | WPVelocity.pro"
+        description="Choose your WordPress hosting plan and start optimizing your website today. Get expert support, enhanced security, and performance improvements."
+      />
       <Header />
-      <main className="flex-grow pt-32 pb-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Choose Your Plan</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Select the perfect combination of hosting and consulting services for your needs.
-              All plans include our premium WordPress hosting on WP Engine.
+      <main className="flex-grow pt-32 pb-16 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+        <div className="container mx-auto px-6 relative">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold mb-6 text-gradient">Purchase Your Plan</h1>
+            <p className="text-xl text-muted-foreground mb-6">
+              Select the best plan that suits your needs and start your journey with WPVelocity.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="glass-morphism p-6 rounded-lg">
+                <h2 className="text-2xl font-semibold mb-4">Basic Plan</h2>
+                <p className="text-lg text-muted-foreground mb-4">Perfect for small websites and blogs.</p>
+                <p className="text-3xl font-bold mb-4">$10/month</p>
+                <Link to="/checkout/basic">
+                  <Button className="w-full">Choose Basic</Button>
+                </Link>
+              </div>
+              <div className="glass-morphism p-6 rounded-lg">
+                <h2 className="text-2xl font-semibold mb-4">Pro Plan</h2>
+                <p className="text-lg text-muted-foreground mb-4">Ideal for growing businesses with more traffic.</p>
+                <p className="text-3xl font-bold mb-4">$25/month</p>
+                <Link to="/checkout/pro">
+                  <Button className="w-full">Choose Pro</Button>
+                </Link>
+              </div>
+              <div className="glass-morphism p-6 rounded-lg">
+                <h2 className="text-2xl font-semibold mb-4">Business Plan</h2>
+                <p className="text-lg text-muted-foreground mb-4">Best for larger businesses needing advanced features.</p>
+                <p className="text-3xl font-bold mb-4">$50/month</p>
+                <Link to="/checkout/business">
+                  <Button className="w-full">Choose Business</Button>
+                </Link>
+              </div>
+              <div className="glass-morphism p-6 rounded-lg">
+                <h2 className="text-2xl font-semibold mb-4">Enterprise Plan</h2>
+                <p className="text-lg text-muted-foreground mb-4">Custom solutions for enterprises with specific needs.</p>
+                <p className="text-3xl font-bold mb-4">Contact Us</p>
+                <Link to="/contact">
+                  <Button className="w-full">Inquire Now</Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </main>

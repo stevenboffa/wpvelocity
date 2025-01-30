@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 import ParticleBackground from "@/components/ui/particle-background";
 
 const NotFound = () => {
@@ -14,6 +15,10 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black relative">
+      <SEO 
+        title="Page Not Found | WPVelocity.pro"
+        description="The page you're looking for couldn't be found. Return to our homepage to explore our WordPress hosting and optimization services."
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
       <ParticleBackground />
       <div className="text-center relative">

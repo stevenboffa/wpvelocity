@@ -10,10 +10,15 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ParticleBackground from "@/components/ui/particle-background";
 import CTASection from "@/components/sections/CTASection";
+import SEO from "@/components/SEO";
 
 const FAQ = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Frequently Asked Questions | WPVelocity.pro"
+        description="Find answers to common questions about our WordPress hosting services, security measures, migration process, and how we help improve your website performance."
+      />
       <Header />
       <main className="flex-grow pt-32 pb-16 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />

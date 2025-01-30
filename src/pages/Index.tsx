@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import HeroSection from "@/components/sections/HeroSection";
 import PainPoints from "@/components/sections/PainPoints";
 import PerformanceMetrics from "@/components/sections/PerformanceMetrics";
@@ -13,6 +14,10 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
+      <SEO 
+        title="Premium Managed WordPress Hosting + SEO/UX | WPVelocity.pro"
+        description="Expert WordPress hosting with integrated SEO, UX, and CRO consulting. Get faster load times, better rankings, and higher conversions with our managed solution."
+      />
       <Header />
       <HeroSection />
       <PainPoints />
