@@ -67,9 +67,10 @@ const PainPoints = () => {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden glass-morphism p-4">
               <img 
-                src="https://images.unsplash.com/photo-1624969862644-791f3dc98927?auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80" 
                 alt="Frustrated professional dealing with website issues"
-                className="w-full h-auto rounded-xl object-cover aspect-[4/3]"
+                className="w-full h-full rounded-xl object-cover"
+                style={{ aspectRatio: "3/4" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl" />
             </div>
