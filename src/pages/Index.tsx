@@ -6,23 +6,23 @@ import { CheckCircle, Star, ArrowRight, Database, Server, ShieldCheck, RocketIco
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-40 pb-24 bg-gradient-to-b from-primary-light to-white">
+      <section className="pt-40 pb-24 bg-gradient-to-b from-secondary to-black">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl font-bold text-secondary leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
                 WordPress Hosting with a Personal Touch
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-gray-300 leading-relaxed">
                 Expert hosting combined with SEO, UX, and CRO consulting to help your business grow.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <Link to="/purchase">
-                  <Button size="lg" className="text-lg px-8 py-6">
+                  <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary-dark">
                     Get Started
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
@@ -33,7 +33,7 @@ const Index = () => {
                       <Star key={i} className="text-yellow-400" size={24} fill="currentColor" />
                     ))}
                   </div>
-                  <span className="ml-4 text-gray-600">500+ happy customers</span>
+                  <span className="ml-4 text-gray-300">500+ happy customers</span>
                 </div>
               </div>
             </div>
@@ -51,9 +51,9 @@ const Index = () => {
       </section>
 
       {/* Services Summary */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Everything You Need to Succeed Online
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
@@ -76,11 +76,11 @@ const Index = () => {
             ].map((service, index) => (
               <div
                 key={index}
-                className="p-8 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+                className="p-8 rounded-xl bg-secondary/10 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300"
               >
                 <service.icon className="w-12 h-12 text-primary mb-6" />
-                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-semibold mb-4 text-white">{service.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -88,9 +88,9 @@ const Index = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-24 bg-secondary-light">
+      <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Common WordPress Hosting Challenges Solved
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
@@ -98,29 +98,29 @@ const Index = () => {
               {
                 icon: Database,
                 pain: "Slow Loading Times",
-                solution: "Lightning-fast servers and optimized configurations",
+                solution: "Our optimized server infrastructure and advanced caching mechanisms ensure your WordPress site loads in under 2 seconds. We utilize WPEngine's premium infrastructure combined with our custom optimization techniques to deliver exceptional performance. Your visitors won't have to wait, leading to better engagement and higher conversion rates.",
               },
               {
                 icon: ShieldCheck,
                 pain: "Security Concerns",
-                solution: "Advanced security measures and regular backups",
+                solution: "We implement enterprise-grade security measures including daily malware scans, real-time threat detection, and automated backups. Our partnership with industry-leading security providers ensures your site is protected against the latest threats. Plus, we handle all security updates and patches automatically.",
               },
               {
                 icon: ChartBar,
                 pain: "Poor SEO Performance",
-                solution: "Expert SEO consulting and optimization",
+                solution: "Our expert SEO consulting helps identify and fix technical issues that might be holding your site back. We conduct thorough audits of your site's structure, content, and performance metrics to optimize for search engines. Regular reports and recommendations keep you informed about your site's progress and areas for improvement.",
               },
               {
                 icon: Users,
                 pain: "Low Conversion Rates",
-                solution: "Data-driven CRO strategies and improvements",
+                solution: "Through data-driven CRO strategies, we help identify user experience bottlenecks and optimize your conversion funnel. We use advanced analytics and heat mapping tools to understand user behavior and make informed decisions. Our team continuously tests and implements improvements to increase your conversion rates.",
               },
             ].map((item, index) => (
-              <div key={index} className="flex items-start space-x-6 p-8 rounded-xl bg-white shadow-md">
+              <div key={index} className="flex items-start space-x-6 p-8 rounded-xl bg-secondary/10 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300">
                 <item.icon className="text-primary flex-shrink-0 w-8 h-8" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">{item.pain}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.solution}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{item.pain}</h3>
+                  <p className="text-gray-300 leading-relaxed">{item.solution}</p>
                 </div>
               </div>
             ))}
@@ -129,9 +129,9 @@ const Index = () => {
       </section>
 
       {/* Social Proof */}
-      <section className="py-24">
+      <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Trusted by Growing Businesses
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
@@ -154,7 +154,7 @@ const Index = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="p-8 rounded-xl bg-white shadow-lg"
+                className="p-8 rounded-xl bg-secondary/10 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300"
               >
                 <div className="flex items-center mb-6">
                   <div className="flex -space-x-1">
@@ -163,10 +163,10 @@ const Index = () => {
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.testimonial}"</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.testimonial}"</p>
                 <div>
-                  <p className="font-semibold text-lg">{testimonial.name}</p>
-                  <p className="text-gray-500">{testimonial.company}</p>
+                  <p className="font-semibold text-lg text-white">{testimonial.name}</p>
+                  <p className="text-gray-400">{testimonial.company}</p>
                 </div>
               </div>
             ))}
@@ -175,15 +175,15 @@ const Index = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-24 bg-primary-light">
+      <section className="py-24 bg-gradient-to-t from-secondary to-black">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-600 mb-12">
+            <h2 className="text-4xl font-bold mb-8 text-white">Ready to Get Started?</h2>
+            <p className="text-xl text-gray-300 mb-12">
               Contact us today to learn how we can help your business grow with professional WordPress hosting and expert consulting.
             </p>
             <Link to="/contact">
-              <Button size="lg" className="text-lg px-8 py-6">
+              <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary-dark">
                 Contact Us
                 <ArrowRight className="ml-2" size={20} />
               </Button>
