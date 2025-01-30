@@ -145,7 +145,7 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className="block"
               >
-                <Button className="w-full bg-primary hover:bg-primary/90 text-black text-lg px-8 py-6 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] glass-morphism">
+                <Button className="w-full bg-primary hover:bg-primary-dark text-black text-lg px-8 py-6 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
                   Get Started
                 </Button>
               </Link>
