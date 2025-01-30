@@ -3,19 +3,19 @@ import { SectionHeader } from "@/components/ui/section-header";
 const SimpleProcess = () => {
   const steps = [
     {
-      title: "1. Requirements",
+      title: "Requirements",
       description: "Share your hosting needs and requirements"
     },
     {
-      title: "2. Consultation",
+      title: "Consultation",
       description: "Get expert advice on the best solution"
     },
     {
-      title: "3. Setup",
+      title: "Setup",
       description: "Quick and seamless deployment"
     },
     {
-      title: "4. Go Live",
+      title: "Go Live",
       description: "Your optimized WordPress site goes live"
     }
   ];
