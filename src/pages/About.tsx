@@ -4,13 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BadgeCheck, Rocket, Shield, Zap, BarChart, Users } from "lucide-react";
+import ParticleBackground from "@/components/ui/particle-background";
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow pt-32 pb-16">
-        <div className="container mx-auto px-6">
+      <main className="flex-grow pt-32 pb-16 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+        <ParticleBackground />
+        
+        <div className="container mx-auto px-6 relative">
           <div className="max-w-4xl mx-auto">
             {/* Hero Section */}
             <div className="mb-16 animate-fade-in-up">
