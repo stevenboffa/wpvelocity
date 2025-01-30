@@ -61,9 +61,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow pb-32">
-        {/* Hero Section - Styled like Services page */}
-        <section className="py-32 bg-black relative overflow-hidden">
+      <main className="flex-grow pb-24">
+        {/* Hero Section - Reduced padding from py-32 to py-20 */}
+        <section className="py-20 bg-black relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
           
           {/* Animated Particles */}
@@ -103,7 +103,7 @@ const Contact = () => {
         </section>
 
         {/* Rest of the contact page content */}
-        <div className="container mx-auto px-6 py-16">
+        <div className="container mx-auto px-6 -mt-8">
           <div className="max-w-6xl mx-auto">
             {/* Two Column Layout */}
             <div className="grid lg:grid-cols-2 gap-12 mt-12">
