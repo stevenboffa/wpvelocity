@@ -73,7 +73,7 @@ const ServicesSummary = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="relative">
       <section className="py-24 bg-black relative overflow-hidden">
         <SectionHeader>Supercharge Your Online Presence</SectionHeader>
         <p className="text-gray-400 max-w-2xl mx-auto text-center mb-16">

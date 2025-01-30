@@ -8,11 +8,9 @@ const Services = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
         <ParticleBackground />
-        <div className="relative">
-          <ServicesSummary />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+        <ServicesSummary />
       </main>
       <Footer />
     </div>
