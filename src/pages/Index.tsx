@@ -26,10 +26,19 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-40 pb-24 bg-gradient-to-b from-secondary to-black">
+      <section className="pt-48 pb-32 min-h-[70vh] flex items-center bg-gradient-to-b from-secondary to-black">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
+              {/* Star Rating moved above heading */}
+              <div className="flex items-center">
+                <div className="flex space-x-3">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="text-yellow-400" size={24} fill="currentColor" />
+                  ))}
+                </div>
+                <span className="ml-4 text-gray-300">500+ happy customers</span>
+              </div>
               <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
                 WordPress Hosting with a Personal Touch
               </h1>
@@ -43,31 +52,17 @@ const Index = () => {
                     <ArrowRight className="ml-2" size={20} />
                   </Button>
                 </Link>
-                <div className="flex items-center">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="text-yellow-400" size={24} fill="currentColor" />
-                    ))}
-                  </div>
-                  <span className="ml-4 text-gray-300">500+ happy customers</span>
-                </div>
               </div>
             </div>
             <div className="relative">
               <div className="animate-float">
                 {isLoading ? (
                   <div className="w-full max-w-lg mx-auto h-64 bg-gray-800 animate-pulse rounded-lg" />
-                ) : images && images[0] ? (
-                  <img
-                    src={images[0].webformatURL}
-                    alt="WordPress Hosting"
-                    className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
-                  />
                 ) : (
                   <img
-                    src="/placeholder.svg"
-                    alt="WordPress Hosting"
-                    className="w-full max-w-lg mx-auto"
+                    src="/photo-1581091226825-a6a2a5aee158"
+                    alt="Professional consultant"
+                    className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
                   />
                 )}
               </div>
