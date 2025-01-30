@@ -27,12 +27,12 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="pt-48 pb-32 min-h-[70vh] flex items-center relative overflow-hidden">
-        {/* Animated Background */}
+        {/* Enhanced Animated Background with more particles */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-black to-black opacity-90" />
         
-        {/* Animated Particles */}
+        {/* Enhanced Animated Particles */}
         <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(50)].map((_, i) => (
             <div
               key={i}
               className="absolute animate-pulse"
@@ -41,10 +41,11 @@ const Index = () => {
                 left: `${Math.random() * 100}%`,
                 width: `${Math.random() * 4 + 2}px`,
                 height: `${Math.random() * 4 + 2}px`,
-                backgroundColor: 'rgba(155, 135, 245, 0.3)',
+                backgroundColor: i % 2 === 0 ? 'rgba(155, 135, 245, 0.3)' : 'rgba(255, 255, 255, 0.2)',
                 borderRadius: '50%',
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${Math.random() * 3 + 2}s`,
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${Math.random() * 6 + 2}s`,
+                filter: `blur(${Math.random() * 2}px)`,
               }}
             />
           ))}
@@ -106,34 +107,45 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Enhanced Image Container */}
+            {/* Enhanced Image Container with 5 animations */}
             <div className="relative group">
+              {/* Animation 1: Gradient glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-lg filter blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse" />
+              
+              {/* Animation 2: Float animation */}
               <div className="animate-float relative">
                 {isLoading ? (
                   <div className="w-full max-w-lg mx-auto h-64 bg-gray-800 animate-pulse rounded-lg" />
                 ) : (
-                  <img
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e"
-                    alt="Professional consultant"
-                    className="w-full max-w-lg mx-auto rounded-lg shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
-                  />
+                  /* Animation 3: Scale and rotate on hover */
+                  <div className="transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1">
+                    <img
+                      src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e"
+                      alt="Professional consultant"
+                      className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
+                    />
+                    
+                    {/* Animation 4: Floating features with staggered delays */}
+                    <div className="absolute -right-4 top-4 glass-morphism p-4 rounded-lg animate-float" 
+                         style={{ animationDelay: "1s", animationDuration: "4s" }}>
+                      <div className="flex items-center space-x-2">
+                        <RocketIcon className="text-primary animate-pulse" size={20} />
+                        <span className="text-sm">Lightning Fast</span>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute -left-4 bottom-4 glass-morphism p-4 rounded-lg animate-float"
+                         style={{ animationDelay: "2s", animationDuration: "5s" }}>
+                      <div className="flex items-center space-x-2">
+                        <ShieldCheck className="text-primary animate-pulse" size={20} />
+                        <span className="text-sm">Enterprise Security</span>
+                      </div>
+                    </div>
+
+                    {/* Animation 5: Shine effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-background-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  </div>
                 )}
-                
-                {/* Floating Features */}
-                <div className="absolute -right-4 top-4 glass-morphism p-4 rounded-lg animate-float" style={{ animationDelay: "1s" }}>
-                  <div className="flex items-center space-x-2">
-                    <RocketIcon className="text-primary" size={20} />
-                    <span className="text-sm">Lightning Fast</span>
-                  </div>
-                </div>
-                
-                <div className="absolute -left-4 bottom-4 glass-morphism p-4 rounded-lg animate-float" style={{ animationDelay: "2s" }}>
-                  <div className="flex items-center space-x-2">
-                    <ShieldCheck className="text-primary" size={20} />
-                    <span className="text-sm">Enterprise Security</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -143,8 +155,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Summary */}
-      <section className="py-24 bg-black">
+      {/* Enhanced Services Summary with particles */}
+      <section className="py-24 bg-black relative overflow-hidden">
+        {/* Additional particle effects for services section */}
+        <div className="absolute inset-0">
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={`service-particle-${i}`}
+              className="absolute animate-pulse"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                width: `${Math.random() * 3 + 1}px`,
+                height: `${Math.random() * 3 + 1}px`,
+                backgroundColor: 'rgba(155, 135, 245, 0.2)',
+                borderRadius: '50%',
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${Math.random() * 4 + 3}s`,
+              }}
+            />
+          ))}
+        </div>
+        
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Everything You Need to Succeed Online
@@ -179,8 +211,29 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* Pain Points Section */}
-      <section className="py-24 bg-black/50">
+
+      {/* Enhanced Pain Points Section with particles */}
+      <section className="py-24 bg-black/50 relative overflow-hidden">
+        {/* Additional particle effects for pain points section */}
+        <div className="absolute inset-0">
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={`pain-particle-${i}`}
+              className="absolute animate-pulse"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                width: `${Math.random() * 3 + 1}px`,
+                height: `${Math.random() * 3 + 1}px`,
+                backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                borderRadius: '50%',
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${Math.random() * 4 + 3}s`,
+              }}
+            />
+          ))}
+        </div>
+
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Common WordPress Hosting Challenges Solved
@@ -219,6 +272,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Performance Metrics Section */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
@@ -241,6 +295,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Technology Stack Section */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
@@ -323,6 +378,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Process Section */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
@@ -358,6 +414,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Social Proof */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
@@ -403,6 +460,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Contact Form */}
       <section className="py-24 bg-gradient-to-t from-secondary to-black">
         <div className="container mx-auto px-6">
