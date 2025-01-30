@@ -9,7 +9,6 @@ import PainPoints from "@/components/sections/PainPoints";
 import PerformanceMetrics from "@/components/sections/PerformanceMetrics";
 import EnterpriseTechStack from "@/components/sections/EnterpriseTechStack";
 import SimpleProcess from "@/components/sections/SimpleProcess";
-import TrustedBusinesses from "@/components/sections/TrustedBusinesses";
 import { usePixabayImages } from "@/hooks/use-pixabay-images";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect } from "react";
@@ -37,7 +36,6 @@ const Index = () => {
       <PerformanceMetrics />
       <EnterpriseTechStack />
       <SimpleProcess />
-      <TrustedBusinesses />
       
       {/* Contact Form */}
       <section className="py-24 bg-gradient-to-t from-secondary to-black">
