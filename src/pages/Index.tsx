@@ -9,16 +9,10 @@ import PerformanceMetrics from "@/components/sections/PerformanceMetrics";
 import EnterpriseTechStack from "@/components/sections/EnterpriseTechStack";
 import SimpleProcess from "@/components/sections/SimpleProcess";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      <SEO 
-        title="Premium Managed WordPress Hosting + SEO/UX | WPVelocity.pro"
-        description="Expert WordPress hosting with integrated SEO, UX, and CRO consulting. Get faster load times, better rankings, and higher conversions with our managed solutions."
-        path="/"
-      />
       <Header />
       <HeroSection />
       <PainPoints />

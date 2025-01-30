@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import { RocketIcon, ChartBar, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import SEO from "@/components/SEO";
 
 const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
   icon: any;
@@ -80,11 +79,6 @@ const Purchase = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow pt-32 pb-16">
-        <SEO 
-          title="Buy WPVelocity Now | WPVelocity.pro"
-          description="Choose your perfect WordPress hosting plan. Get started with our premium managed hosting services including SEO optimization and expert consulting."
-          path="/purchase"
-        />
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Choose Your Plan</h1>

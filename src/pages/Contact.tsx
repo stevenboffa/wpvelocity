@@ -24,7 +24,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import SEO from "@/components/SEO";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -62,11 +61,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO 
-        title="Contact Us | WPVelocity.pro"
-        description="Get in touch with our WordPress hosting and SEO experts. We're here to help you optimize your website's performance and boost your online success."
-        path="/contact"
-      />
       <Header />
       <main className="flex-grow pb-24">
         <section className="py-20 pt-24 bg-black relative overflow-hidden">
