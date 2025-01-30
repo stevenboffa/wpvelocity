@@ -12,19 +12,21 @@ const ServiceCard = ({ icon: Icon, title, price, features, ctaText, ctaLink }: {
   ctaText: string;
   ctaLink: string;
 }) => (
-  <div className="p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300">
-    <Icon className="w-12 h-12 text-primary mb-6" />
-    <h3 className="text-2xl font-semibold mb-2 text-white">{title}</h3>
-    <div className="text-3xl font-bold text-primary mb-6">{price}</div>
-    <ul className="space-y-4 mb-8 text-gray-300">
-      {features.map((feature, index) => (
-        <li key={index} className="flex items-center gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-          {feature}
-        </li>
-      ))}
-    </ul>
-    <Link to={ctaLink}>
+  <div className="flex flex-col h-full p-8 rounded-xl neo-blur hover:border-primary/50 transition-all duration-300">
+    <div className="flex-grow">
+      <Icon className="w-12 h-12 text-primary mb-6" />
+      <h3 className="text-2xl font-semibold mb-2 text-white">{title}</h3>
+      <div className="text-3xl font-bold text-primary mb-6">{price}</div>
+      <ul className="space-y-4 mb-8 text-gray-300">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <Link to={ctaLink} className="mt-auto">
       <Button className="w-full" size="lg">{ctaText}</Button>
     </Link>
   </div>
@@ -64,11 +66,11 @@ const Purchase = () => {
       price: "Custom",
       features: [
         "Tailored WordPress solutions",
-        "Custom consulting hours",
+        "Consulting hours",
         "Dedicated support team",
         "Bespoke development"
       ],
-      ctaText: "Get a Quote",
+      ctaText: "Get Started",
       ctaLink: "/contact"
     }
   ];
@@ -90,16 +92,6 @@ const Purchase = () => {
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <h2 className="text-2xl font-semibold mb-4">Need a Custom Solution?</h2>
-            <p className="text-muted-foreground mb-6">
-              We can create a tailored package to meet your specific requirements.
-            </p>
-            <Link to="/contact">
-              <Button variant="outline">Contact Us</Button>
-            </Link>
           </div>
         </div>
       </main>

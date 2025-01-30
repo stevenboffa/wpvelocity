@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BadgeCheck, Rocket, Shield, Zap, BarChart, Users } from "lucide-react";
 import ParticleBackground from "@/components/ui/particle-background";
+import CTASection from "@/components/sections/CTASection";
 
 const About = () => {
   return (
@@ -104,24 +105,9 @@ const About = () => {
                 </Card>
               </div>
             </div>
-
-            {/* CTA Section */}
-            <div className="text-center animate-fade-in-up delay-200">
-              <h2 className="text-2xl font-semibold mb-4">Ready to Get Started?</h2>
-              <p className="text-muted-foreground mb-6">
-                Let's work together to optimize your WordPress website for success.
-              </p>
-              <div className="flex gap-4 justify-center">
-                <Link to="/services">
-                  <Button variant="outline" className="glass-morphism">View Services</Button>
-                </Link>
-                <Link to="/contact">
-                  <Button className="bg-primary hover:bg-primary-dark">Contact Us</Button>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
+        <CTASection />
       </main>
       <Footer />
     </div>

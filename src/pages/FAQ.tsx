@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ParticleBackground from "@/components/ui/particle-background";
+import CTASection from "@/components/sections/CTASection";
 
 const FAQ = () => {
   return (
@@ -65,17 +66,9 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-
-            <div className="text-center">
-              <p className="text-muted-foreground mb-6">
-                Still have questions? We're here to help!
-              </p>
-              <Link to="/contact">
-                <Button>Contact Us</Button>
-              </Link>
-            </div>
           </div>
         </div>
+        <CTASection />
       </main>
       <Footer />
     </div>
