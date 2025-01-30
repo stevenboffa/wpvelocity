@@ -100,38 +100,38 @@ const HeroSection = () => {
                 />
                 
                 {/* Top Left Feature Card */}
-                <div className="absolute -top-12 -left-12 glass-morphism p-8 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[240px]"
+                <div className="absolute -top-8 -left-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                      style={{ animationDelay: "0s", animationDuration: "4s" }}>
-                  <div className="flex items-center space-x-4">
-                    <RocketIcon className="text-primary animate-pulse w-10 h-10" />
-                    <span className="text-xl font-medium">Instant Deploy</span>
+                  <div className="flex items-center space-x-3">
+                    <RocketIcon className="text-primary animate-pulse w-8 h-8" />
+                    <span className="text-lg font-medium">Instant Deploy</span>
                   </div>
                 </div>
                 
                 {/* Top Right Feature Card */}
-                <div className="absolute -top-12 -right-12 glass-morphism p-8 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[240px]"
+                <div className="absolute -top-8 -right-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                      style={{ animationDelay: "1s", animationDuration: "4.5s" }}>
-                  <div className="flex items-center space-x-4">
-                    <ShieldCheck className="text-primary animate-pulse w-10 h-10" />
-                    <span className="text-xl font-medium">Secure</span>
+                  <div className="flex items-center space-x-3">
+                    <ShieldCheck className="text-primary animate-pulse w-8 h-8" />
+                    <span className="text-lg font-medium">Secure</span>
                   </div>
                 </div>
                 
                 {/* Bottom Left Feature Card */}
-                <div className="absolute -bottom-12 -left-12 glass-morphism p-8 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[240px]"
+                <div className="absolute -bottom-8 -left-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                      style={{ animationDelay: "1.5s", animationDuration: "4.2s" }}>
-                  <div className="flex items-center space-x-4">
-                    <Server className="text-primary animate-pulse w-10 h-10" />
-                    <span className="text-xl font-medium">Optimized</span>
+                  <div className="flex items-center space-x-3">
+                    <Server className="text-primary animate-pulse w-8 h-8" />
+                    <span className="text-lg font-medium">Optimized</span>
                   </div>
                 </div>
 
                 {/* Bottom Right Feature Card */}
-                <div className="absolute -bottom-12 -right-12 glass-morphism p-8 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[240px]"
+                <div className="absolute -bottom-8 -right-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                      style={{ animationDelay: "2s", animationDuration: "4.8s" }}>
-                  <div className="flex items-center space-x-4">
-                    <ChartBar className="text-primary animate-pulse w-10 h-10" />
-                    <span className="text-xl font-medium">Analytics</span>
+                  <div className="flex items-center space-x-3">
+                    <ChartBar className="text-primary animate-pulse w-8 h-8" />
+                    <span className="text-lg font-medium">Analytics</span>
                   </div>
                 </div>
 
