@@ -26,8 +26,6 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-
-      {/* Hero Section */}
       <section className="pt-48 pb-32 min-h-[70vh] flex items-center relative overflow-hidden">
         {/* Enhanced Animated Background with more particles */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-black to-black opacity-90" />
@@ -109,9 +107,9 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Enhanced Image Container with 5 animations */}
+            {/* Enhanced Image Container with floating features */}
             <div className="relative group">
-              {/* Animation 1: Gradient glow effect - now more subtle */}
+              {/* Animation 1: Gradient glow effect - subtle */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent rounded-lg filter blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse opacity-60" />
               
               {/* Animation 2: Float animation */}
@@ -126,49 +124,53 @@ const Index = () => {
                       className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
                     />
                     
-                    {/* Animation 3: Floating features with staggered delays */}
-                    <div className="absolute -right-4 top-4 glass-morphism p-4 rounded-lg animate-float" 
-                         style={{ animationDelay: "1s", animationDuration: "4s" }}>
+                    {/* Enhanced Floating Feature Cards */}
+                    {/* Top Card */}
+                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                         style={{ animationDelay: "0s", animationDuration: "4s" }}>
                       <div className="flex items-center space-x-2">
                         <RocketIcon className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm">Lightning Fast</span>
+                        <span className="text-sm font-medium">Instant Deploy</span>
                       </div>
                     </div>
                     
-                    <div className="absolute -left-4 bottom-4 glass-morphism p-4 rounded-lg animate-float"
-                         style={{ animationDelay: "2s", animationDuration: "5s" }}>
+                    {/* Right Card */}
+                    <div className="absolute top-1/3 -right-8 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                         style={{ animationDelay: "1s", animationDuration: "4.5s" }}>
                       <div className="flex items-center space-x-2">
                         <ShieldCheck className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm">Enterprise Security</span>
+                        <span className="text-sm font-medium">Secure</span>
                       </div>
                     </div>
-
-                    {/* New floating features */}
-                    <div className="absolute -right-4 bottom-1/2 glass-morphism p-4 rounded-lg animate-float"
-                         style={{ animationDelay: "1.5s", animationDuration: "4.5s" }}>
+                    
+                    {/* Bottom Card */}
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                         style={{ animationDelay: "2s", animationDuration: "5s" }}>
                       <div className="flex items-center space-x-2">
                         <ChartBar className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm">Analytics</span>
+                        <span className="text-sm font-medium">Analytics</span>
                       </div>
                     </div>
 
-                    <div className="absolute left-1/2 -translate-x-1/2 top-0 glass-morphism p-4 rounded-lg animate-float"
-                         style={{ animationDelay: "2.5s", animationDuration: "5.5s" }}>
+                    {/* Left Card */}
+                    <div className="absolute top-1/3 -left-8 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                         style={{ animationDelay: "1.5s", animationDuration: "4.2s" }}>
                       <div className="flex items-center space-x-2">
                         <Users className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm">Team Support</span>
+                        <span className="text-sm font-medium">Team</span>
                       </div>
                     </div>
 
-                    <div className="absolute left-1/3 bottom-8 glass-morphism p-4 rounded-lg animate-float"
-                         style={{ animationDelay: "3s", animationDuration: "4.8s" }}>
+                    {/* Center Card */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                         style={{ animationDelay: "2.5s", animationDuration: "4.8s" }}>
                       <div className="flex items-center space-x-2">
                         <Sparkles className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm">AI Powered</span>
+                        <span className="text-sm font-medium">AI Ready</span>
                       </div>
                     </div>
 
-                    {/* Animation 4: Shine effect overlay */}
+                    {/* Shine effect overlay */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-background-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 )}
@@ -269,22 +271,22 @@ const Index = () => {
               {
                 icon: Database,
                 pain: "Slow Loading Times",
-                solution: "Our optimized server infrastructure and advanced caching mechanisms ensure your WordPress site loads in under 2 seconds. We utilize WPEngine's premium infrastructure combined with our custom optimization techniques to deliver exceptional performance. Your visitors won't have to wait, leading to better engagement and higher conversion rates.",
+                solution: "Our optimized server infrastructure ensures your site loads in under 2 seconds.",
               },
               {
                 icon: ShieldCheck,
                 pain: "Security Concerns",
-                solution: "We implement enterprise-grade security measures including daily malware scans, real-time threat detection, and automated backups. Our partnership with industry-leading security providers ensures your site is protected against the latest threats. Plus, we handle all security updates and patches automatically.",
+                solution: "We implement daily malware scans and real-time threat detection.",
               },
               {
                 icon: ChartBar,
                 pain: "Poor SEO Performance",
-                solution: "Our expert SEO consulting helps identify and fix technical issues that might be holding your site back. We conduct thorough audits of your site's structure, content, and performance metrics to optimize for search engines. Regular reports and recommendations keep you informed about your site's progress and areas for improvement.",
+                solution: "Our expert SEO consulting helps identify and fix technical issues.",
               },
               {
                 icon: Users,
                 pain: "Low Conversion Rates",
-                solution: "Through data-driven CRO strategies, we help identify user experience bottlenecks and optimize your conversion funnel. We use advanced analytics and heat mapping tools to understand user behavior and make informed decisions. Our team continuously tests and implements improvements to increase your conversion rates.",
+                solution: "We help identify user experience bottlenecks to increase conversions.",
               },
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-6 p-8 rounded-xl bg-secondary/10 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300">
