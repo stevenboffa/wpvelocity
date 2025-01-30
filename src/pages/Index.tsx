@@ -4,29 +4,13 @@ import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import ServicesSummary from "@/components/sections/ServicesSummary";
 import PainPoints from "@/components/sections/PainPoints";
 import PerformanceMetrics from "@/components/sections/PerformanceMetrics";
 import EnterpriseTechStack from "@/components/sections/EnterpriseTechStack";
 import SimpleProcess from "@/components/sections/SimpleProcess";
-import { usePixabayImages } from "@/hooks/use-pixabay-images";
-import { useToast } from "@/hooks/use-toast";
-import { useEffect } from "react";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 
 const Index = () => {
-  const { data: images, isLoading, error } = usePixabayImages();
-  const { toast } = useToast();
-
-  useEffect(() => {
-    if (error) {
-      toast({
-        title: "Error loading images",
-        description: "Please try again later",
-        variant: "destructive",
-      });
-    }
-  }, [error, toast]);
-
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Header />
@@ -35,7 +19,7 @@ const Index = () => {
       <PerformanceMetrics />
       <EnterpriseTechStack />
       <SimpleProcess />
-      <ServicesSummary />
+      <TestimonialsSection />
       
       {/* Contact Form */}
       <section className="py-24 bg-gradient-to-t from-secondary to-black">
