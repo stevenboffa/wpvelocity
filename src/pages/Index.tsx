@@ -21,6 +21,14 @@ const Index = () => {
     }
   }, [error, toast]);
 
+  const SectionHeader = ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <h2 className={`text-4xl font-bold text-center mb-16 text-white relative group ${className}`}>
+      {children}
+      <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-1/3 transition-all duration-300 ease-in-out" />
+      <span className="absolute -bottom-4 right-1/2 transform translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-1/3 transition-all duration-300 ease-in-out" />
+    </h2>
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Header />
@@ -124,49 +132,44 @@ const Index = () => {
                       className="w-full max-w-lg mx-auto rounded-lg shadow-2xl"
                     />
                     
-                    {/* Enhanced Floating Feature Cards */}
-                    {/* Top Card */}
-                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                    {/* Enhanced Floating Feature Cards with increased size */}
+                    <div className="absolute top-1/4 -translate-y-1/2 left-1/2 -translate-x-1/2 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                          style={{ animationDelay: "0s", animationDuration: "4s" }}>
-                      <div className="flex items-center space-x-2">
-                        <RocketIcon className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm font-medium">Instant Deploy</span>
+                      <div className="flex items-center space-x-3">
+                        <RocketIcon className="text-primary animate-pulse w-6 h-6" />
+                        <span className="text-base font-medium">Instant Deploy</span>
                       </div>
                     </div>
                     
-                    {/* Right Card */}
-                    <div className="absolute top-1/3 -right-8 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                    <div className="absolute top-1/2 -right-12 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                          style={{ animationDelay: "1s", animationDuration: "4.5s" }}>
-                      <div className="flex items-center space-x-2">
-                        <ShieldCheck className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm font-medium">Secure</span>
+                      <div className="flex items-center space-x-3">
+                        <ShieldCheck className="text-primary animate-pulse w-6 h-6" />
+                        <span className="text-base font-medium">Secure</span>
                       </div>
                     </div>
                     
-                    {/* Bottom Card */}
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                    <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                          style={{ animationDelay: "2s", animationDuration: "5s" }}>
-                      <div className="flex items-center space-x-2">
-                        <ChartBar className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm font-medium">Analytics</span>
+                      <div className="flex items-center space-x-3">
+                        <ChartBar className="text-primary animate-pulse w-6 h-6" />
+                        <span className="text-base font-medium">Analytics</span>
                       </div>
                     </div>
 
-                    {/* Left Card */}
-                    <div className="absolute top-1/3 -left-8 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                    <div className="absolute top-1/2 -left-12 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                          style={{ animationDelay: "1.5s", animationDuration: "4.2s" }}>
-                      <div className="flex items-center space-x-2">
-                        <Users className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm font-medium">Team</span>
+                      <div className="flex items-center space-x-3">
+                        <Users className="text-primary animate-pulse w-6 h-6" />
+                        <span className="text-base font-medium">Team</span>
                       </div>
                     </div>
 
-                    {/* Center Card */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-morphism p-3 rounded-lg animate-float shadow-lg border border-primary/20"
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-morphism p-4 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                          style={{ animationDelay: "2.5s", animationDuration: "4.8s" }}>
-                      <div className="flex items-center space-x-2">
-                        <Sparkles className="text-primary animate-pulse" size={20} />
-                        <span className="text-sm font-medium">AI Ready</span>
+                      <div className="flex items-center space-x-3">
+                        <Sparkles className="text-primary animate-pulse w-6 h-6" />
+                        <span className="text-base font-medium">AI Ready</span>
                       </div>
                     </div>
 
@@ -185,7 +188,7 @@ const Index = () => {
 
       {/* Enhanced Services Summary with particles */}
       <section className="py-24 bg-black relative overflow-hidden">
-        {/* Additional particle effects for services section */}
+        <SectionHeader>Everything You Need to Succeed Online</SectionHeader>
         <div className="absolute inset-0">
           {[...Array(30)].map((_, i) => (
             <div
@@ -206,9 +209,6 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            Everything You Need to Succeed Online
-          </h2>
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
@@ -242,7 +242,7 @@ const Index = () => {
 
       {/* Enhanced Pain Points Section with particles */}
       <section className="py-24 bg-black/50 relative overflow-hidden">
-        {/* Additional particle effects for pain points section */}
+        <SectionHeader>Common WordPress Hosting Challenges Solved</SectionHeader>
         <div className="absolute inset-0">
           {[...Array(30)].map((_, i) => (
             <div
@@ -263,9 +263,6 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            Common WordPress Hosting Challenges Solved
-          </h2>
           <div className="grid md:grid-cols-2 gap-12">
             {[
               {
@@ -304,9 +301,7 @@ const Index = () => {
       {/* Performance Metrics Section */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            Performance That Speaks for Itself
-          </h2>
+          <SectionHeader>Performance That Speaks for Itself</SectionHeader>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { metric: "99.9%", label: "Uptime Guarantee", icon: Server },
@@ -327,9 +322,7 @@ const Index = () => {
       {/* Technology Stack Section */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            Enterprise-Grade Technology Stack
-          </h2>
+          <SectionHeader>Enterprise-Grade Technology Stack</SectionHeader>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="p-6 neo-blur rounded-xl">
@@ -410,9 +403,7 @@ const Index = () => {
       {/* Process Section */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            Our Simple Process
-          </h2>
+          <SectionHeader>Our Simple Process</SectionHeader>
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
@@ -446,9 +437,7 @@ const Index = () => {
       {/* Social Proof */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            Trusted by Growing Businesses
-          </h2>
+          <SectionHeader>Trusted by Growing Businesses</SectionHeader>
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
