@@ -25,7 +25,7 @@ const PainPoints = () => {
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 items-start">
           {/* Pain Points Column */}
           <div className="space-y-6">
             {[
