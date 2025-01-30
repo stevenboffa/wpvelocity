@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicesSummary from "@/components/sections/ServicesSummary";
 import ParticleBackground from "@/components/ui/particle-background";
+import CTASection from "@/components/sections/CTASection";
 
 const Services = () => {
   return (
@@ -11,6 +12,7 @@ const Services = () => {
         <ParticleBackground />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
         <ServicesSummary />
+        <CTASection />
       </main>
       <Footer />
     </div>
