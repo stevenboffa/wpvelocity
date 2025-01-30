@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-gradient">Hosted by Steve</h3>
+            <h3 className="text-xl font-bold text-gradient">WPVelocity</h3>
             <p className="text-gray-400">
               Professional WordPress hosting with expert SEO, UX, and CRO consulting.
             </p>
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Hosted by Steve. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} WPVelocity. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -19,7 +19,7 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-gradient">
-            Hosted by Steve
+            WPVelocity
           </Link>
 
           {/* Desktop Navigation */}
