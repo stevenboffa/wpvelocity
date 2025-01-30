@@ -73,15 +73,15 @@ const ServicesSummary = () => {
   ];
 
   return (
-    <div className="relative">
-      <section className="py-24 bg-black relative overflow-hidden">
+    <>
+      {/* Main Services */}
+      <section className="py-24 relative">
         <SectionHeader>Supercharge Your Online Presence</SectionHeader>
         <p className="text-gray-400 max-w-2xl mx-auto text-center mb-16">
           Expert WordPress hosting combined with personalized SEO, UX, and CRO consulting
           to help your business grow.
         </p>
 
-        {/* Main Services */}
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8 mb-24">
             {services.map((service, index) => (
@@ -139,7 +139,7 @@ const ServicesSummary = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
