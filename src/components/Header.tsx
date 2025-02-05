@@ -37,8 +37,12 @@ const Header = () => {
       <header className="fixed w-full bg-black/50 backdrop-blur-md z-50 border-b border-white/10">
         <nav className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-gradient">
-              WPVelocity
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/8a6aeaf5-e451-43d0-ab8c-c8e776b021f7.png" 
+                alt="WPVelocity" 
+                className="h-8"
+              />
             </Link>
 
             {/* Desktop Navigation */}

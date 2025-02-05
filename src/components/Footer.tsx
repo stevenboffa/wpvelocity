@@ -7,7 +7,13 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-gradient">WPVelocity</h3>
+            <Link to="/" className="block">
+              <img 
+                src="/lovable-uploads/8a6aeaf5-e451-43d0-ab8c-c8e776b021f7.png" 
+                alt="WPVelocity" 
+                className="h-8"
+              />
+            </Link>
             <p className="text-gray-400">
               Professional WordPress hosting with expert SEO, UX, and CRO consulting.
             </p>
