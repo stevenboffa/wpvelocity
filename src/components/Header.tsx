@@ -41,7 +41,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/8a6aeaf5-e451-43d0-ab8c-c8e776b021f7.png" 
                 alt="WPVelocity" 
-                className="h-8"
+                className="h-12"
               />
             </Link>
 
