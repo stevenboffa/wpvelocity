@@ -17,7 +17,7 @@ const FAQ = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Frequently Asked Questions | WPVelocity.pro"
-        description="Find answers to common questions about our WordPress hosting services, security measures, migration process, and how we help improve your website performance."
+        description="Find answers about our WordPress hosting, security measures, and optimization services. Learn how we help improve your website's performance and user experience."
       />
       <Header />
       <main className="flex-grow pt-32 pb-16 relative">

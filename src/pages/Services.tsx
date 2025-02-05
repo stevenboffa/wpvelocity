@@ -13,7 +13,7 @@ const Services = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="WordPress Hosting & Expert Consulting | WPVelocity.pro"
-        description="Get enterprise-grade WordPress hosting combined with expert consulting from a professional with 20+ years of experience in SEO and UX optimization."
+        description="Transform your WordPress site with our premium hosting and expert consulting. Monthly optimization, dedicated support, and proven strategies for better performance."
       />
       <Header />
       <main className="flex-grow">

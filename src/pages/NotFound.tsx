@@ -17,7 +17,7 @@ const NotFound = () => {
     <div className="min-h-screen flex items-center justify-center bg-black relative">
       <SEO 
         title="Page Not Found | WPVelocity.pro"
-        description="The page you're looking for couldn't be found. Return to our homepage to explore our WordPress hosting and optimization services."
+        description="The page you're looking for couldn't be found. Return to our homepage to explore our WordPress hosting and optimization services for your business."
       />
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
       <ParticleBackground />

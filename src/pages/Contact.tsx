@@ -64,7 +64,7 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Contact Us | WPVelocity.pro"
-        description="Get in touch with our WordPress hosting experts. We're here to help you improve your website's performance, security, and conversion rates."
+        description="Get in touch with our WordPress experts in Toronto. We're here to help optimize your website's performance, security, and user experience with personalized solutions."
       />
       <Header />
       <main className="flex-grow pb-24">

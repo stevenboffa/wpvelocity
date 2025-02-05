@@ -16,7 +16,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-black text-white">
       <SEO 
         title="Premium Managed WordPress Hosting + SEO/UX | WPVelocity.pro"
-        description="Expert WordPress hosting with integrated SEO, UX, and CRO consulting. Get faster load times, better rankings, and higher conversions with our managed solution."
+        description="Expert WordPress hosting with personalized SEO & UX consulting. Get faster load times, better rankings, and dedicated support to grow your online presence."
       />
       <Header />
       <HeroSection />

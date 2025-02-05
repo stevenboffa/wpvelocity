@@ -97,7 +97,7 @@ const Purchase = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Buy WPVelocity Now | WPVelocity.pro"
-        description="Choose your WordPress hosting plan and start optimizing your website today. Get expert support, enhanced security, and performance improvements."
+        description="Choose your ideal WordPress hosting plan with included SEO & UX consulting. Start optimizing your website today with our expert-led solutions and support."
       />
       <Header />
       <main className="flex-grow pt-32 pb-16 relative">

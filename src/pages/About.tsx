@@ -13,7 +13,7 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="About Us | WPVelocity.pro"
-        description="Meet our team of WordPress hosting experts and learn about our mission to deliver exceptional performance, security, and growth for your online business."
+        description="20+ years of WordPress expertise delivering exceptional performance and growth. Learn how our personalized approach and integrated solutions help businesses succeed online."
       />
       <Header />
       <main className="flex-grow pt-32 pb-16 relative">
