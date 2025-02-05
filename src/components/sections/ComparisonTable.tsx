@@ -35,7 +35,7 @@ const ComparisonTable = () => {
       category: "Expert Consulting",
       items: [
         {
-          name: "Monthly consulting with SEO expert",
+          name: "Monthly consulting hours included",
           wpVelocity: "1 hour",
           wpVelocityPro: "5 hours",
           highlight: true,
@@ -52,8 +52,8 @@ const ComparisonTable = () => {
         },
         {
           name: "UX optimization consulting",
-          wpVelocity: false,
-          wpVelocityPro: true,
+          wpVelocity: "Basic",
+          wpVelocityPro: "Advanced",
         },
       ],
     },
@@ -61,22 +61,12 @@ const ComparisonTable = () => {
       category: "Growth & Analytics",
       items: [
         {
-          name: "Monthly SEO & UX analysis report",
+          name: "Monthly analysis report",
           wpVelocity: "Basic",
           wpVelocityPro: "Comprehensive",
         },
         {
-          name: "Conversion rate optimization",
-          wpVelocity: false,
-          wpVelocityPro: true,
-        },
-        {
           name: "Competitor analysis & tracking",
-          wpVelocity: false,
-          wpVelocityPro: true,
-        },
-        {
-          name: "Custom development & integrations",
           wpVelocity: false,
           wpVelocityPro: true,
         },
@@ -159,15 +149,10 @@ const ComparisonTable = () => {
           </table>
         </div>
 
-        <div className="flex justify-center gap-8 mt-12">
-          <Link to="/contact">
-            <Button size="lg" variant="outline">
-              Get WPVelocity
-            </Button>
-          </Link>
-          <Link to="/contact">
+        <div className="flex justify-center mt-12">
+          <Link to="/purchase">
             <Button size="lg" className="bg-primary hover:bg-primary-dark">
-              Get WPVelocity Pro
+              Get Started
             </Button>
           </Link>
         </div>

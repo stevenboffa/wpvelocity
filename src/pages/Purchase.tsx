@@ -52,7 +52,7 @@ const Purchase = () => {
   const services = [
     {
       icon: RocketIcon,
-      title: "Velocity",
+      title: "WPVelocity",
       price: "$59/month",
       features: [
         "Premium WordPress hosting on WP Engine",
@@ -60,21 +60,21 @@ const Purchase = () => {
         "SEO & UX analysis with tools",
         "Monthly insights report"
       ],
-      ctaText: "Subscribe Now",
+      ctaText: "Buy Now",
       ctaLink: "#",
       priceId: "price_1Qn4LSF36j5KRkTBVqyyietu"
     },
     {
       icon: ChartBar,
-      title: "Velocity Pro",
+      title: "WPVelocity Pro",
       price: "$249/month",
       features: [
-        "Everything in Velocity package",
+        "Everything in WPVelocity package",
         "5 hours monthly consulting",
         "Monthly 30-min strategy call",
         "Priority support"
       ],
-      ctaText: "Subscribe Now",
+      ctaText: "Buy Now",
       ctaLink: "#",
       priceId: "price_1Qn4MQF36j5KRkTB86YH2MqN"
     },

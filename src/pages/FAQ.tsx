@@ -65,9 +65,9 @@ const FAQ = () => {
               </AccordionItem>
 
               <AccordionItem value="item-6">
-                <AccordionTrigger>How do you improve conversion rates?</AccordionTrigger>
+                <AccordionTrigger>How do you improve user experience?</AccordionTrigger>
                 <AccordionContent>
-                  We use data-driven analysis to identify opportunities for improvement, implement A/B testing, optimize user journeys, and make UX recommendations that increase conversion rates.
+                  We take a comprehensive approach to UX improvement by analyzing user behavior, conducting usability testing, and implementing data-driven design changes. Our process includes heatmap analysis, user journey optimization, and regular performance monitoring to ensure your website provides the best possible experience for your visitors.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

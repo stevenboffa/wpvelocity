@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Home, Info, Briefcase, HelpCircle, Mail, ChevronRight } from "lucide-react";
+import { Menu, X, Home, Info, Briefcase, HelpCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +11,6 @@ const Header = () => {
     { name: "Home", href: "/", icon: Home },
     { name: "About", href: "/about", icon: Info },
     { name: "Services", href: "/services", icon: Briefcase },
-    { name: "FAQ", href: "/faq", icon: HelpCircle },
     { name: "Contact", href: "/contact", icon: Mail },
   ];
 
@@ -124,7 +123,6 @@ const Header = () => {
                     >
                       <Icon className="w-6 h-6" />
                       <span>{item.name}</span>
-                      <ChevronRight className="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1" />
                     </Link>
                   </div>
                 );

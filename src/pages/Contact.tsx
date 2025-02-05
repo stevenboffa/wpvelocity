@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -116,17 +116,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-muted-foreground">steve@hostedby.steve</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 group hover:translate-x-2 transition-transform">
-                    <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Phone className="text-primary h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Phone</h3>
-                      <p className="text-muted-foreground">(555) 123-4567</p>
+                      <p className="text-muted-foreground">hello@wpvelocity.pro</p>
                     </div>
                   </div>
                   
@@ -136,7 +126,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Location</h3>
-                      <p className="text-muted-foreground">San Francisco, CA</p>
+                      <p className="text-muted-foreground">Toronto, Canada</p>
                     </div>
                   </div>
                 </div>

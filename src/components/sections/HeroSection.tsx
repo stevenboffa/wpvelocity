@@ -44,7 +44,7 @@ const HeroSection = () => {
                   />
                 ))}
               </div>
-              <span className="ml-4 text-gray-300">500+ happy customers</span>
+              <span className="ml-4 text-gray-300">50+ happy customers</span>
             </div>
 
             {/* Heading */}
@@ -102,8 +102,8 @@ const HeroSection = () => {
                 <div className="absolute -top-8 -left-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                      style={{ animationDelay: "0s", animationDuration: "4s" }}>
                   <div className="flex items-center space-x-3">
-                    <RocketIcon className="text-primary animate-pulse w-8 h-8" />
-                    <span className="text-lg font-medium">Instant Deploy</span>
+                    <Shield className="text-primary animate-pulse w-8 h-8" />
+                    <span className="text-lg font-medium">Secure</span>
                   </div>
                 </div>
                 
@@ -111,8 +111,8 @@ const HeroSection = () => {
                 <div className="absolute -top-8 -right-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                      style={{ animationDelay: "1s", animationDuration: "4.5s" }}>
                   <div className="flex items-center space-x-3">
-                    <ShieldCheck className="text-primary animate-pulse w-8 h-8" />
-                    <span className="text-lg font-medium">Secure</span>
+                    <Search className="text-primary animate-pulse w-8 h-8" />
+                    <span className="text-lg font-medium">SEO Optimized</span>
                   </div>
                 </div>
                 
@@ -120,8 +120,8 @@ const HeroSection = () => {
                 <div className="absolute -bottom-8 -left-8 glass-morphism p-6 rounded-lg animate-float shadow-lg border border-primary/20 min-w-[180px]"
                      style={{ animationDelay: "1.5s", animationDuration: "4.2s" }}>
                   <div className="flex items-center space-x-3">
-                    <Server className="text-primary animate-pulse w-8 h-8" />
-                    <span className="text-lg font-medium">Optimized</span>
+                    <Zap className="text-primary animate-pulse w-8 h-8" />
+                    <span className="text-lg font-medium">Lightning Fast</span>
                   </div>
                 </div>
 
@@ -130,7 +130,7 @@ const HeroSection = () => {
                      style={{ animationDelay: "2s", animationDuration: "4.8s" }}>
                   <div className="flex items-center space-x-3">
                     <ChartBar className="text-primary animate-pulse w-8 h-8" />
-                    <span className="text-lg font-medium">Analytics</span>
+                    <span className="text-lg font-medium">A+++ Support</span>
                   </div>
                 </div>
 
