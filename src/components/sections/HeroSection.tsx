@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle, Star, ArrowRight, Server, ShieldCheck, RocketIcon, ChartBar } from "lucide-react";
+import { CheckCircle, Star, ArrowRight, Server, ShieldCheck, RocketIcon, ChartBar, Shield, Search, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (

@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BadgeCheck, Rocket, Shield, Zap, BarChart, Users } from "lucide-react";
+import { BadgeCheck, Rocket, Shield, Zap, BarChart, Users, Calendar } from "lucide-react";
 import ParticleBackground from "@/components/ui/particle-background";
 import CTASection from "@/components/sections/CTASection";
 import SEO from "@/components/SEO";
