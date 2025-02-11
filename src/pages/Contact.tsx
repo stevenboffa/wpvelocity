@@ -1,3 +1,4 @@
+
 import { Mail, MapPin } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -54,11 +55,11 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
+      console.log('Sending form data:', values); // Debug log
+
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: JSON.stringify(values),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        method: 'POST',
+        body: values, // supabase.functions.invoke will handle JSON stringification
       });
 
       if (error) {
