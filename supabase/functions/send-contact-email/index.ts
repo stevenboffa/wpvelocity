@@ -72,8 +72,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to site admin
     const adminEmailResponse = await resend.emails.send({
-      from: "WPVelocity <hello@wpvelocity.com>",
-      to: ["hello@wpvelocity.com"],
+      from: "WPVelocity <hello@wpvelocity.pro>",
+      to: ["hello@wpvelocity.pro"],
       subject: `New Contact Form Submission: ${formData.subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -91,7 +91,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to user
     const userEmailResponse = await resend.emails.send({
-      from: "WPVelocity <hello@wpvelocity.com>",
+      from: "WPVelocity <hello@wpvelocity.pro>",
       to: [formData.email],
       subject: "We've received your message!",
       html: `
