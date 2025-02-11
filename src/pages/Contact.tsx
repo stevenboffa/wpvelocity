@@ -87,7 +87,7 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Contact Us | WPVelocity.pro"
-        description="Get in touch with WPVelocity for expert WordPress support, custom solutions, and optimization. Let's build, grow, and elevate your website together!"
+        description="Get in touch with WPVelocity for expert WordPress support, custom solutions, and optimization. Let’s build, grow, and elevate your website together!"
       />
       <Header />
       <main className="flex-grow pb-24">
