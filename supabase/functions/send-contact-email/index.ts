@@ -26,13 +26,54 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const formData: ContactFormData = await req.json();
-    console.log("Received contact form submission:", formData);
+    // Log the raw request body for debugging
+    const rawBody = await req.text();
+    console.log("Raw request body:", rawBody);
+
+    let formData: ContactFormData;
+    try {
+      formData = JSON.parse(rawBody);
+    } catch (parseError) {
+      console.error("JSON parsing error:", parseError);
+      return new Response(
+        JSON.stringify({
+          error: true,
+          message: "Invalid JSON data received",
+          details: parseError.message,
+        }),
+        {
+          status: 400,
+          headers: {
+            "Content-Type": "application/json",
+            ...corsHeaders,
+          },
+        }
+      );
+    }
+
+    console.log("Parsed form data:", formData);
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      return new Response(
+        JSON.stringify({
+          error: true,
+          message: "Missing required fields",
+        }),
+        {
+          status: 400,
+          headers: {
+            "Content-Type": "application/json",
+            ...corsHeaders,
+          },
+        }
+      );
+    }
 
     // Send email to site admin
     const adminEmailResponse = await resend.emails.send({
       from: "WPVelocity <onboarding@resend.dev>",
-      to: ["hello@wpvelocity.pro"], // Replace with your admin email
+      to: ["hello@wpvelocity.pro"],
       subject: `New Contact Form Submission: ${formData.subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -45,6 +86,8 @@ const handler = async (req: Request): Promise<Response> => {
         <p>${formData.message}</p>
       `,
     });
+
+    console.log("Admin email sent:", adminEmailResponse);
 
     // Send confirmation email to user
     const userEmailResponse = await resend.emails.send({
@@ -65,37 +108,36 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Emails sent successfully:", {
-      adminEmail: adminEmailResponse,
-      userEmail: userEmailResponse,
-    });
+    console.log("User confirmation email sent:", userEmailResponse);
 
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
+        success: true,
         message: "Emails sent successfully",
         adminEmail: adminEmailResponse,
-        userEmail: userEmailResponse
+        userEmail: userEmailResponse,
       }),
       {
         status: 200,
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
-          ...corsHeaders
+          ...corsHeaders,
         },
       }
     );
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         error: true,
-        message: error.message || "Failed to send emails"
+        message: error.message || "Failed to send emails",
+        details: error.stack || "No stack trace available",
       }),
       {
         status: 500,
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
-          ...corsHeaders
+          ...corsHeaders,
         },
       }
     );
