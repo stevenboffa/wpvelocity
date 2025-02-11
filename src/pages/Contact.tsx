@@ -1,4 +1,3 @@
-
 import { Mail, MapPin } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -88,7 +87,7 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Contact Us | WPVelocity.pro"
-        description="Get in touch with our WordPress experts in Toronto. We're here to help optimize your website's performance, security, and user experience with personalized solutions."
+        description="Get in touch with WPVelocity for expert WordPress support, custom solutions, and optimization. Let's build, grow, and elevate your website together!"
       />
       <Header />
       <main className="flex-grow pb-24">

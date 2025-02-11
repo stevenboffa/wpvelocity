@@ -1,3 +1,4 @@
+
 import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
@@ -8,6 +9,7 @@ interface SEOProps {
 
 const SEO = ({ title, description, canonical }: SEOProps) => {
   const currentUrl = canonical || window.location.href;
+  const ogImage = "/lovable-uploads/77023825-139d-4c3d-859a-102892b45a1c.png";
   
   return (
     <Helmet>
@@ -17,8 +19,10 @@ const SEO = ({ title, description, canonical }: SEOProps) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={currentUrl} />
+      <meta property="og:image" content={ogImage} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
     </Helmet>
   );
 };

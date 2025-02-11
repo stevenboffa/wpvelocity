@@ -13,7 +13,7 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="About Us | WPVelocity.pro"
-        description="20+ years of WordPress expertise delivering exceptional performance and growth. Learn how our personalized approach and integrated solutions help businesses succeed online."
+        description="Learn about WPVelocity, a WordPress performance agency dedicated to optimizing speed, security, and scalability for faster, more efficient websites."
       />
       <Header />
       <main className="flex-grow pt-32 pb-16 relative">
@@ -58,61 +58,58 @@ const About = () => {
             </div>
 
             {/* Why Choose Us Section */}
+            <div className="mb-16">
+              <h2 className="text-2xl font-semibold mb-8 text-gradient">Why Choose WPVelocity?</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="gradient-border neo-blur">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Rocket className="w-6 h-6 text-primary" />
+                      <div>
+                        <h3 className="font-semibold mb-2">Expert Knowledge</h3>
+                        <p className="text-muted-foreground">Years of experience in WordPress hosting, SEO, and user experience.</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-        {/* Why Choose Us Section */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-semibold mb-8 text-gradient">Why Choose WPVelocity?</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="gradient-border neo-blur">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Rocket className="w-6 h-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Expert Knowledge</h3>
-                    <p className="text-muted-foreground">Years of experience in WordPress hosting, SEO, and user experience.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                <Card className="gradient-border neo-blur">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Users className="w-6 h-6 text-primary" />
+                      <div>
+                        <h3 className="font-semibold mb-2">Personalized Service</h3>
+                        <p className="text-muted-foreground">Direct access to SEO/UX expertise and support when you need it.</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-            <Card className="gradient-border neo-blur">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Users className="w-6 h-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Personalized Service</h3>
-                    <p className="text-muted-foreground">Direct access to SEO/UX expertise and support when you need it.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                <Card className="gradient-border neo-blur">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Shield className="w-6 h-6 text-primary" />
+                      <div>
+                        <h3 className="font-semibold mb-2">Integrated Solution</h3>
+                        <p className="text-muted-foreground">Hosting, SEO, and UX services working together for better results.</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-            <Card className="gradient-border neo-blur">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Shield className="w-6 h-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Integrated Solution</h3>
-                    <p className="text-muted-foreground">Hosting, SEO, and UX services working together for better results.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="gradient-border neo-blur">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Calendar className="w-6 h-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Monthly check-ins</h3>
-                    <p className="text-muted-foreground">We make sure you're getting the most value from our services.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
+                <Card className="gradient-border neo-blur">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Calendar className="w-6 h-6 text-primary" />
+                      <div>
+                        <h3 className="font-semibold mb-2">Monthly check-ins</h3>
+                        <p className="text-muted-foreground">We make sure you're getting the most value from our services.</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
         <CTASection />
