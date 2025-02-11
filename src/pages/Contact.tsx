@@ -54,22 +54,30 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: values
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Edge function error:', error);
+        throw error;
+      }
+
+      console.log('Response from edge function:', data);
 
       toast({
         title: "Message sent successfully!",
         description: "We'll get back to you as soon as possible.",
       });
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending message:', error);
       toast({
         title: "Error sending message",
-        description: "Please try again later or contact us directly via email.",
+        description: error.message || "Please try again later or contact us directly via email.",
         variant: "destructive",
       });
     }

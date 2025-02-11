@@ -71,19 +71,32 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     return new Response(
-      JSON.stringify({ message: "Emails sent successfully" }),
+      JSON.stringify({ 
+        message: "Emails sent successfully",
+        adminEmail: adminEmailResponse,
+        userEmail: userEmailResponse
+      }),
       {
         status: 200,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
+        headers: { 
+          "Content-Type": "application/json",
+          ...corsHeaders
+        },
       }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: true,
+        message: error.message || "Failed to send emails"
+      }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
+        headers: { 
+          "Content-Type": "application/json",
+          ...corsHeaders
+        },
       }
     );
   }
