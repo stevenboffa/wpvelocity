@@ -15,10 +15,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      <SEO 
-        title="Premium Managed WordPress Hosting + SEO/UX | WPVelocity.pro"
-        description="Boost your WordPress site speed with WPVelocity. Expert optimization for faster load times, better SEO, and improved user experience. Get started today!"
-      />
+      {/* Remove SEO component from index page since metadata is in HTML */}
       <Header />
       <HeroSection />
       <PainPoints />
