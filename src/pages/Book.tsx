@@ -73,7 +73,7 @@ const Book = () => {
       <div className="min-h-screen flex flex-col bg-gradient-to-b from-black to-gray-900">
         <Header />
         
-        <main className="flex-1 container mx-auto px-4 py-12 md:py-24">
+        <main className="flex-1 container mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-24">
           <SectionHeader>Book a Call</SectionHeader>
           
           <div className="bg-black/30 backdrop-blur-sm p-6 rounded-xl border border-white/10 shadow-xl">
