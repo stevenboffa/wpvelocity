@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Home, Info, Briefcase, HelpCircle, Mail, Calendar } from "lucide-react";
@@ -13,7 +12,7 @@ const Header = () => {
     { name: "About", href: "/about", icon: Info },
     { name: "Services", href: "/services", icon: Briefcase },
     { name: "Contact", href: "/contact", icon: Mail },
-    { name: "Book a Call", href: "https://cal.com/wpvelocity/meeting", icon: Calendar, isExternal: true },
+    { name: "Book a Call", href: "/book", icon: Calendar },
   ];
 
   useEffect(() => {
@@ -50,26 +49,13 @@ const Header = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
-                item.isExternal ? (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-white transition-colors flex items-center"
-                  >
-                    <item.icon className="w-4 h-4 mr-1" />
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                )
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {item.name}
+                </Link>
               ))}
               <Link to="/purchase">
                 <Button className="bg-primary hover:bg-primary-dark text-black">
@@ -135,27 +121,14 @@ const Header = () => {
                       opacity: 0,
                     }}
                   >
-                    {item.isExternal ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-4 text-xl font-medium text-white/90 glass-morphism p-4 rounded-lg group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-2 group-hover:scale-[1.02]"
-                        onClick={handleMenuItemClick}
-                      >
-                        <Icon className="w-6 h-6" />
-                        <span>{item.name}</span>
-                      </a>
-                    ) : (
-                      <Link
-                        to={item.href}
-                        className="flex items-center space-x-4 text-xl font-medium text-white/90 glass-morphism p-4 rounded-lg group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-2 group-hover:scale-[1.02]"
-                        onClick={handleMenuItemClick}
-                      >
-                        <Icon className="w-6 h-6" />
-                        <span>{item.name}</span>
-                      </Link>
-                    )}
+                    <Link
+                      to={item.href}
+                      className="flex items-center space-x-4 text-xl font-medium text-white/90 glass-morphism p-4 rounded-lg group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-2 group-hover:scale-[1.02]"
+                      onClick={handleMenuItemClick}
+                    >
+                      <Icon className="w-6 h-6" />
+                      <span>{item.name}</span>
+                    </Link>
                   </div>
                 );
               })}
